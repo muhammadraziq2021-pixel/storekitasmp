@@ -166,6 +166,13 @@ footer{border-top:1px solid rgba(120,60,240,.15);padding:40px 0;text-align:cente
 footer strong{color:var(--purple-glow);}
 
 @keyframes pulse-glow{0%,100%{text-shadow:0 0 20px rgba(124,63,224,.5);}50%{text-shadow:0 0 40px rgba(124,63,224,.9),0 0 60px rgba(45,126,245,.4);}}
+/* PARTICLE EFFECTS BOX */
+.particle-effects-box{background:var(--card-bg);border:1px solid var(--card-border);border-radius:14px;padding:22px 24px;margin-bottom:32px;}
+.particle-effects-box .peb-title{font-family:'Orbitron',sans-serif;font-size:13px;font-weight:700;color:var(--teal);letter-spacing:1.5px;margin-bottom:12px;text-transform:uppercase;}
+.peb-grid{display:flex;flex-wrap:wrap;gap:8px;}
+.peb-tag{display:inline-block;background:rgba(124,63,224,.12);border:1px solid rgba(124,63,224,.25);border-radius:20px;padding:5px 14px;font-size:12px;color:rgba(200,190,255,.85);font-weight:500;}
+.peb-tag:hover{background:rgba(124,63,224,.2);border-color:rgba(124,63,224,.5);}
+.peb-note{font-size:12px;color:var(--muted);margin-top:12px;line-height:1.5;}
 </style>
 </head>
 <body>
@@ -591,38 +598,195 @@ footer strong{color:var(--purple-glow);}
     </div>
   </section>
 
-  <!-- PARTIKEL -->
+    <!-- PARTIKEL -->
   <section id="partikel">
     <div class="section-header">
       <span class="section-label">✦ Cosmetic</span>
       <div class="section-title">Partikel</div>
-      <div class="section-desc">Tampil beda dengan efek partikel eksklusif yang terlihat oleh semua player di sekitarmu.</div>
+      <div class="section-desc">Tampil beda dengan efek partikel eksklusif yang terlihat oleh semua player di sekitarmu. Dibagi dalam 3 kelas: Standar, Premium, dan Sultan.</div>
     </div>
+
+    <!-- KOTAK PILIHAN EFEK PARTIKEL -->
+    <div class="particle-effects-box">
+      <div class="peb-title">✦ Pilihan Efek Partikel</div>
+      <div class="peb-grid">
+        <span class="peb-tag">🌸 cherry_leaves</span>
+        <span class="peb-tag">🔥 flame</span>
+        <span class="peb-tag">❤️ heart</span>
+        <span class="peb-tag">🎵 note</span>
+        <span class="peb-tag">💀 soul</span>
+        <span class="peb-tag">✨ end_rod</span>
+        <span class="peb-tag">🍯 wax_on</span>
+        <span class="peb-tag">🐉 dragon_breath</span>
+        <span class="peb-tag">🔮 enchant</span>
+        <span class="peb-tag">🌟 totem_of_undying</span>
+        <span class="peb-tag">🧙 witch</span>
+        <span class="peb-tag">😊 happy_villager</span>
+        <span class="peb-tag">😠 angry_villager</span>
+        <span class="peb-tag">🌋 lava</span>
+        <span class="peb-tag">💧 water</span>
+        <span class="peb-tag">❄️ snowflake</span>
+        <span class="peb-tag">🌙 end_rod</span>
+        <span class="peb-tag">🌿 happy_villager</span>
+        <span class="peb-tag">⚡ scrape</span>
+        <span class="peb-tag">🕯️ soul_fire_flame</span>
+      </div>
+      <div class="peb-note">Kamu bebas memilih efek di atas untuk dipasangkan dengan style partikel yang dibeli. Beberapa efek bisa dikombinasikan dengan warna custom. Tanyakan admin untuk melihat preview langsung di server!</div>
+    </div>
+
+    <span class="sub-label">— Standar (15k – 50k)</span>
     <div class="particle-grid">
 
-      <a class="buyable" href="https://wa.me/6281270551570?text=Halo+admin%2C+saya+mau+beli+Partikel+Trail+Rp+30.000%0A%0AQRIS%3A+https%3A%2F%2Fimg2.pixhost.to%2Fimages%2F7681%2F722690235_media.jpg" target="_blank">
+      <a class="buyable" href="https://wa.me/6281270551570?text=Halo+admin%2C+saya+mau+beli+Partikel+Normal+Rp+20.000%0A%0AQRIS%3A+https%3A%2F%2Fimg2.pixhost.to%2Fimages%2F7681%2F722690235_media.jpg" target="_blank">
         <div class="particle-card buyable-card">
-          <span class="particle-icon">👣</span><div class="particle-name">Trail</div>
-          <div class="particle-desc">Partikel mengikuti jejak langkah player saat berjalan. Tersedia berbagai efek seperti flame, bubble, enchant, dan lainnya. Ringan dan tidak menyebabkan lag.</div>
+          <span class="particle-icon">✨</span><div class="particle-name">Normal</div>
+          <div class="particle-desc">Particle muncul di sekitar tubuh player saat ini. Efek paling simpel dan ringan — cocok untuk yang suka estetik low-key tanpa jejak panjang.</div>
+          <div class="particle-price">Rp 20.000</div>
+          <div class="buy-tag">Beli →</div>
+        </div>
+      </a>
+
+      <a class="buyable" href="https://wa.me/6281270551570?text=Halo+admin%2C+saya+mau+beli+Partikel+Feet+Rp+25.000%0A%0AQRIS%3A+https%3A%2F%2Fimg2.pixhost.to%2Fimages%2F7681%2F722690235_media.jpg" target="_blank">
+        <div class="particle-card buyable-card">
+          <span class="particle-icon">🦶</span><div class="particle-name">Feet</div>
+          <div class="particle-desc">Particle muncul di kaki setiap langkah. Subtle tapi estetik — terlihat natural saat berjalan di tanah, pasir, atau salju.</div>
+          <div class="particle-price">Rp 25.000</div>
+          <div class="buy-tag">Beli →</div>
+        </div>
+      </a>
+
+      <a class="buyable" href="https://wa.me/6281270551570?text=Halo+admin%2C+saya+mau+beli+Partikel+Move+Rp+30.000%0A%0AQRIS%3A+https%3A%2F%2Fimg2.pixhost.to%2Fimages%2F7681%2F722690235_media.jpg" target="_blank">
+        <div class="particle-card buyable-card">
+          <span class="particle-icon">👣</span><div class="particle-name">Move</div>
+          <div class="particle-desc">Jejak elegan yang mengikuti setiap langkah pergerakanmu. Tampak sederhana, namun meninggalkan kesan yang tak terlupakan di setiap sudut server.</div>
           <div class="particle-price">Rp 30.000</div>
           <div class="buy-tag">Beli →</div>
         </div>
       </a>
 
-      <a class="buyable" href="https://wa.me/6281270551570?text=Halo+admin%2C+saya+mau+beli+Partikel+Hat+Rp+50.000%0A%0AQRIS%3A+https%3A%2F%2Fimg2.pixhost.to%2Fimages%2F7681%2F722690235_media.jpg" target="_blank">
+      <a class="buyable" href="https://wa.me/6281270551570?text=Halo+admin%2C+saya+mau+beli+Partikel+Trail+Rp+40.000%0A%0AQRIS%3A+https%3A%2F%2Fimg2.pixhost.to%2Fimages%2F7681%2F722690235_media.jpg" target="_blank">
         <div class="particle-card buyable-card">
-          <span class="particle-icon">🎩</span><div class="particle-name">Hat</div>
-          <div class="particle-desc">Partikel muncul di atas kepala player secara terus-menerus dan terlihat oleh semua player di sekitar. Efek seperti crown, star, smoke, dan masih banyak lagi.</div>
-          <div class="particle-price">Rp 50.000</div>
+          <span class="particle-icon">💨</span><div class="particle-name">Trail</div>
+          <div class="particle-desc">Jejak panjang di belakang player saat berlari. Lebih panjang dan dramatis dari Move — cocok untuk show-off saat PvP atau parkour.</div>
+          <div class="particle-price">Rp 40.000</div>
           <div class="buy-tag">Beli →</div>
         </div>
       </a>
 
-      <a class="buyable" href="https://wa.me/6281270551570?text=Halo+admin%2C+saya+mau+beli+Partikel+Attack+Rp+70.000%0A%0AQRIS%3A+https%3A%2F%2Fimg2.pixhost.to%2Fimages%2F7681%2F722690235_media.jpg" target="_blank">
+    </div>
+
+    <span class="sub-label">— Premium (60k – 100k)</span>
+    <div class="particle-grid">
+
+      <a class="buyable" href="https://wa.me/6281270551570?text=Halo+admin%2C+saya+mau+beli+Partikel+Halo+Rp+60.000%0A%0AQRIS%3A+https%3A%2F%2Fimg2.pixhost.to%2Fimages%2F7681%2F722690235_media.jpg" target="_blank">
         <div class="particle-card buyable-card">
-          <span class="particle-icon">⚔️</span><div class="particle-name">Attack</div>
-          <div class="particle-desc">Partikel muncul saat player menyerang musuh. Efek seperti explosion, crit, lightning, blood, dan lainnya. Hanya aktif saat combat — tidak mengganggu saat farming.</div>
+          <span class="particle-icon">😇</span><div class="particle-name">Halo</div>
+          <div class="particle-desc">Lingkaran particle di atas kepala seperti malaikat. Terlihat jelas dari jauh dan memberi kesan suci / elite di tengah keramaian.</div>
+          <div class="particle-price">Rp 60.000</div>
+          <div class="buy-tag">Beli →</div>
+        </div>
+      </a>
+
+      <a class="buyable" href="https://wa.me/6281270551570?text=Halo+admin%2C+saya+mau+beli+Partikel+Overhead+Rp+65.000%0A%0AQRIS%3A+https%3A%2F%2Fimg2.pixhost.to%2Fimages%2F7681%2F722690235_media.jpg" target="_blank">
+        <div class="particle-card buyable-card">
+          <span class="particle-icon">👑</span><div class="particle-name">Overhead</div>
+          <div class="particle-desc">Particle muncul di atas kepala seperti mahkota. Efek statis yang elegan — tidak bergerak tapi selalu terlihat oleh player di sekitar.</div>
+          <div class="particle-price">Rp 65.000</div>
+          <div class="buy-tag">Beli →</div>
+        </div>
+      </a>
+
+      <a class="buyable" href="https://wa.me/6281270551570?text=Halo+admin%2C+saya+mau+beli+Partikel+Orbit+Rp+70.000%0A%0AQRIS%3A+https%3A%2F%2Fimg2.pixhost.to%2Fimages%2F7681%2F722690235_media.jpg" target="_blank">
+        <div class="particle-card buyable-card">
+          <span class="particle-icon">🪐</span><div class="particle-name">Orbit</div>
+          <div class="particle-desc">Particle berputar mengelilingi badan seperti planet. Eye-catching dan dinamis — pilihan terbaik untuk tier menengah yang ingin mencolok.</div>
           <div class="particle-price">Rp 70.000</div>
+          <div class="buy-tag">Beli →</div>
+        </div>
+      </a>
+
+      <a class="buyable" href="https://wa.me/6281270551570?text=Halo+admin%2C+saya+mau+beli+Partikel+Spin+Rp+75.000%0A%0AQRIS%3A+https%3A%2F%2Fimg2.pixhost.to%2Fimages%2F7681%2F722690235_media.jpg" target="_blank">
+        <div class="particle-card buyable-card">
+          <span class="particle-icon">🔄</span><div class="particle-name">Spin</div>
+          <div class="particle-desc">Particle berputar cepat mengelilingi player. Efek yang lebih intens dari Orbit — memberi kesan energi tinggi saat berdiri atau bergerak.</div>
+          <div class="particle-price">Rp 75.000</div>
+          <div class="buy-tag">Beli →</div>
+        </div>
+      </a>
+
+      <a class="buyable" href="https://wa.me/6281270551570?text=Halo+admin%2C+saya+mau+beli+Partikel+Spiral+Rp+80.000%0A%0AQRIS%3A+https%3A%2F%2Fimg2.pixhost.to%2Fimages%2F7681%2F722690235_media.jpg" target="_blank">
+        <div class="particle-card buyable-card">
+          <span class="particle-icon">🌀</span><div class="particle-name">Spiral</div>
+          <div class="particle-desc">Particle berputar spiral ke atas dan ke bawah. Dinamis dan artistik — cocok untuk player yang suka tampilan unik dan tidak pasaran.</div>
+          <div class="particle-price">Rp 80.000</div>
+          <div class="buy-tag">Beli →</div>
+        </div>
+      </a>
+
+      <a class="buyable" href="https://wa.me/6281270551570?text=Halo+admin%2C+saya+mau+beli+Partikel+Rings+Rp+90.000%0A%0AQRIS%3A+https%3A%2F%2Fimg2.pixhost.to%2Fimages%2F7681%2F722690235_media.jpg" target="_blank">
+        <div class="particle-card buyable-card">
+          <span class="particle-icon">⭕</span><div class="particle-name">Rings</div>
+          <div class="particle-desc">Cincin particle horizontal berputar mengelilingi player. Efek premium yang terlihat seperti shield energi atau portal kecil di sekitar tubuh.</div>
+          <div class="particle-price">Rp 90.000</div>
+          <div class="buy-tag">Beli →</div>
+        </div>
+      </a>
+
+    </div>
+
+    <span class="sub-label">— Sultan (110k – 150k)</span>
+    <div class="particle-grid">
+
+      <a class="buyable" href="https://wa.me/6281270551570?text=Halo+admin%2C+saya+mau+beli+Partikel+Beam+Rp+110.000%0A%0AQRIS%3A+https%3A%2F%2Fimg2.pixhost.to%2Fimages%2F7681%2F722690235_media.jpg" target="_blank">
+        <div class="particle-card buyable-card">
+          <span class="particle-icon">🔦</span><div class="particle-name">Beam</div>
+          <div class="particle-desc">Sinar lurus ke atas dari tubuh player seperti tiang cahaya. Terlihat sangat jelas dari jarak jauh — cocok untuk mark presence di spawn atau event.</div>
+          <div class="particle-price">Rp 110.000</div>
+          <div class="buy-tag">Beli →</div>
+        </div>
+      </a>
+
+      <a class="buyable" href="https://wa.me/6281270551570?text=Halo+admin%2C+saya+mau+beli+Partikel+Sphere+Rp+120.000%0A%0AQRIS%3A+https%3A%2F%2Fimg2.pixhost.to%2Fimages%2F7681%2F722690235_media.jpg" target="_blank">
+        <div class="particle-card buyable-card">
+          <span class="particle-icon">🔮</span><div class="particle-name">Sphere</div>
+          <div class="particle-desc">Bola particle menyelimuti seluruh tubuh. Terlihat seperti player berada di dalam shield atau bubble energi — sangat mencolok dan berkelas.</div>
+          <div class="particle-price">Rp 120.000</div>
+          <div class="buy-tag">Beli →</div>
+        </div>
+      </a>
+
+      <a class="buyable" href="https://wa.me/6281270551570?text=Halo+admin%2C+saya+mau+beli+Partikel+Companion+Rp+125.000%0A%0AQRIS%3A+https%3A%2F%2Fimg2.pixhost.to%2Fimages%2F7681%2F722690235_media.jpg" target="_blank">
+        <div class="particle-card buyable-card">
+          <span class="particle-icon">🐾</span><div class="particle-name">Companion</div>
+          <div class="particle-desc">Particle mengikuti seperti hewan peliharaan kecil. Lucu, unik, dan jarang dipakai — cocok untuk player yang ingin tampil beda dari yang lain.</div>
+          <div class="particle-price">Rp 125.000</div>
+          <div class="buy-tag">Beli →</div>
+        </div>
+      </a>
+
+      <a class="buyable" href="https://wa.me/6281270551570?text=Halo+admin%2C+saya+mau+beli+Partikel+Whirlwind+Rp+140.000%0A%0AQRIS%3A+https%3A%2F%2Fimg2.pixhost.to%2Fimages%2F7681%2F722690235_media.jpg" target="_blank">
+        <div class="particle-card buyable-card">
+          <span class="particle-icon">🌪️</span><div class="particle-name">Whirlwind</div>
+          <div class="particle-desc">Angin puyuh particle berputar kencang di sekitar player. Efek paling ramai dan dramatis — semua mata akan tertuju padamu saat lewat.</div>
+          <div class="particle-price">Rp 140.000</div>
+          <div class="buy-tag">Beli →</div>
+        </div>
+      </a>
+
+      <a class="buyable" href="https://wa.me/6281270551570?text=Halo+admin%2C+saya+mau+beli+Partikel+Vortex+Rp+145.000%0A%0AQRIS%3A+https%3A%2F%2Fimg2.pixhost.to%2Fimages%2F7681%2F722690235_media.jpg" target="_blank">
+        <div class="particle-card buyable-card">
+          <span class="particle-icon">🌌</span><div class="particle-name">Vortex</div>
+          <div class="particle-desc">Pusaran tornado besar di sekitar player. Lebih luas dan megah dari Whirlwind — memberi kesan seperti penguasa elemental yang baru saja turun ke dunia.</div>
+          <div class="particle-price">Rp 145.000</div>
+          <div class="buy-tag">Beli →</div>
+        </div>
+      </a>
+
+      <a class="buyable" href="https://wa.me/6281270551570?text=Halo+admin%2C+saya+mau+beli+Partikel+Wings+Rp+150.000%0A%0AQRIS%3A+https%3A%2F%2Fimg2.pixhost.to%2Fimages%2F7681%2F722690235_media.jpg" target="_blank">
+        <div class="particle-card buyable-card">
+          <span class="particle-icon">🪽</span><div class="particle-name">Wings</div>
+          <div class="particle-desc">Sayap megah menjulang di punggung — simbol supremasi dan keanggunan tertinggi. Kehadiranmu akan terasa begitu berwibawa dari setiap sudut pandang, tak perlu kata-kata untuk membuktikan kedudukanmu.</div>
+          <div class="particle-price">Rp 150.000</div>
           <div class="buy-tag">Beli →</div>
         </div>
       </a>
@@ -630,7 +794,7 @@ footer strong{color:var(--purple-glow);}
     </div>
   </section>
 
-  <!-- AKSESORIS -->
+<!-- AKSESORIS -->
   <section id="aksesoris">
     <div class="section-header">
       <span class="section-label">✦ Exclusive</span>

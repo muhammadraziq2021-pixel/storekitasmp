@@ -129,6 +129,12 @@ table.bt{width:100%;border-collapse:collapse;font-size:13px;}
 .skill-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-bottom:28px;}
 .skill-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:14px;padding:20px 18px 42px;text-align:center;position:relative;overflow:hidden;}
 .skill-card:hover{border-color:rgba(124,63,224,.5);}
+.skill-featured{background:linear-gradient(135deg,rgba(240,192,64,.12),rgba(255,200,50,.08),rgba(240,192,64,.12));border:2px solid rgba(240,192,64,.6);transform:scale(1.04);position:relative;overflow:hidden;}
+.skill-featured::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-gradient(45deg,transparent 40%,rgba(255,255,255,.15) 50%,transparent 60%);animation:shine 3s infinite;pointer-events:none;}
+@keyframes shine{0%{transform:translateX(-100%) translateY(-100%) rotate(45deg);}100%{transform:translateX(100%) translateY(100%) rotate(45deg);}}
+.skill-featured:hover{transform:scale(1.07);border-color:rgba(240,192,64,.9);box-shadow:0 0 40px rgba(240,192,64,.25),0 0 80px rgba(240,192,64,.1);}
+.skill-featured .skill-icon{font-size:38px;filter:drop-shadow(0 0 8px rgba(240,192,64,.6));}
+.skill-featured .skill-name{font-size:15px;letter-spacing:2px;background:linear-gradient(135deg,#ffe066,#f0c040,#ff9500);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:800;}
 .skill-icon{font-size:28px;margin-bottom:8px;display:block;}
 .skill-name{font-family:'Orbitron',sans-serif;font-size:12px;font-weight:700;color:var(--white);margin-bottom:6px;letter-spacing:1px;}
 .skill-badge{display:inline-block;font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:10px;}
@@ -520,7 +526,6 @@ footer strong{color:var(--purple-glow);}
       <a class="buyable" href="https://wa.me/6281270551570?text=Halo+admin%2C+saya+mau+beli+Skill+Inferno%0A%0AQRIS%3A+https%3A%2F%2Fimg2.pixhost.to%2Fimages%2F7681%2F722690235_media.jpg" target="_blank">
         <div class="skill-card buyable-card">
           <span class="skill-icon">🔥</span><div class="skill-name">Inferno</div>
-          <span class="skill-badge badge-tmpl">Template</span>
           <div class="skill-desc">Setiap serangan membakar target secara otomatis (Fire Aspect effect). Musuh akan terus menerima damage api bahkan setelah berhenti dipukul.</div>
           <div class="skill-price">Rp 20.000</div>
           <div class="buy-tag">Beli →</div>
@@ -530,7 +535,6 @@ footer strong{color:var(--purple-glow);}
       <a class="buyable" href="https://wa.me/6281270551570?text=Halo+admin%2C+saya+mau+beli+Skill+Blind+Strike%0A%0AQRIS%3A+https%3A%2F%2Fimg2.pixhost.to%2Fimages%2F7681%2F722690235_media.jpg" target="_blank">
         <div class="skill-card buyable-card">
           <span class="skill-icon">🌑</span><div class="skill-name">Blind Strike</div>
-          <span class="skill-badge badge-tmpl">Template</span>
           <div class="skill-desc">Serangan membutakan target sesaat (Blindness effect). Makin tinggi level makin lama durasi kebutaannya — musuh tidak bisa melihatmu.</div>
           <div class="skill-price">Rp 25.000</div>
           <div class="buy-tag">Beli →</div>
@@ -540,7 +544,6 @@ footer strong{color:var(--purple-glow);}
       <a class="buyable" href="https://wa.me/6281270551570?text=Halo+admin%2C+saya+mau+beli+Skill+Void+Cloak%0A%0AQRIS%3A+https%3A%2F%2Fimg2.pixhost.to%2Fimages%2F7681%2F722690235_media.jpg" target="_blank">
         <div class="skill-card buyable-card">
           <span class="skill-icon">👻</span><div class="skill-name">Void Cloak</div>
-          <span class="skill-badge badge-tmpl">Template</span>
           <div class="skill-desc">Auto invisibility sesaat saat HP di bawah 30%. Tidak perlu diaktifkan manual — aktif otomatis saat kondisi kritis untuk memberi kesempatan melarikan diri.</div>
           <div class="skill-price">Rp 45.000</div>
           <div class="buy-tag">Beli →</div>
@@ -550,9 +553,17 @@ footer strong{color:var(--purple-glow);}
       <a class="buyable" href="https://wa.me/6281270551570?text=Halo+admin%2C+saya+mau+beli+Skill+Lightning+Punch%0A%0AQRIS%3A+https%3A%2F%2Fimg2.pixhost.to%2Fimages%2F7681%2F722690235_media.jpg" target="_blank">
         <div class="skill-card buyable-card">
           <span class="skill-icon">⚡</span><div class="skill-name">Lightning Punch</div>
-          <span class="skill-badge badge-tmpl">Template</span>
           <div class="skill-desc">Panggil petir di lokasi target saat menyerang. Damage besar dan efek dramatis yang bikin musuh gemetar sebelum bertarung.</div>
           <div class="skill-price">Rp 50.000</div>
+          <div class="buy-tag">Beli →</div>
+        </div>
+      </a>
+
+      <a class="buyable" href="https://wa.me/6281270551570?text=Halo+admin%2C+saya+mau+beli+Skill+Lifesteal%0A%0AQRIS%3A+https%3A%2F%2Fimg2.pixhost.to%2Fimages%2F7681%2F722690235_media.jpg" target="_blank">
+        <div class="skill-card buyable-card">
+          <span class="skill-icon">🩸</span><div class="skill-name">Lifesteal</div>
+          <div class="skill-desc">Setiap serangan mencuri sebagian HP musuh untuk menyembuhkan dirimu sendiri. Makin sering menyerang, makin panjang umurmu di battle.</div>
+          <div class="skill-price">Rp 75.000</div>
           <div class="buy-tag">Beli →</div>
         </div>
       </a>
@@ -562,23 +573,12 @@ footer strong{color:var(--purple-glow);}
     <span class="sub-label">— Custom Skill</span>
     <div class="skill-grid">
 
-      <a class="buyable" href="https://wa.me/6281270551570?text=Halo+admin%2C+saya+mau+beli+Skill+Lifesteal%0A%0AQRIS%3A+https%3A%2F%2Fimg2.pixhost.to%2Fimages%2F7681%2F722690235_media.jpg" target="_blank">
-        <div class="skill-card buyable-card">
-          <span class="skill-icon">🩸</span><div class="skill-name">Lifesteal</div>
-          <span class="skill-badge badge-custom">Custom Skill</span>
-          <div class="skill-desc">Setiap serangan mencuri sebagian HP musuh untuk menyembuhkan dirimu sendiri. Makin sering menyerang, makin panjang umurmu di battle.</div>
-          <div class="skill-price">Rp 75.000</div>
-          <div class="buy-tag">Beli →</div>
-        </div>
-      </a>
-
       <a class="buyable" href="https://wa.me/6281270551570?text=Halo+admin%2C+saya+mau+request+Custom+Skill%0A%0AQRIS%3A+https%3A%2F%2Fimg2.pixhost.to%2Fimages%2F7681%2F722690235_media.jpg" target="_blank">
-        <div class="skill-card buyable-card">
-          <span class="skill-icon">🎨</span><div class="skill-name">Custom Request</div>
-          <span class="skill-badge badge-custom">Custom Skill</span>
-          <div class="skill-desc">Punya ide skill impian yang tidak ada di daftar? Request langsung ke admin! Dibuat khusus untukmu. Harga menyesuaikan kompleksitas skill yang diminta.</div>
-          <div class="skill-price">Rp 70.000+</div>
-          <div class="buy-tag">Request →</div>
+        <div class="skill-card buyable-card skill-featured">
+          <span class="skill-icon">💎</span><div class="skill-name">Custom Skill</div>
+          <div class="skill-desc">Ingin skill yang benar-benar unik dan tidak dimiliki siapapun? Ceritakan konsepmu — dari efek elemental, teleportasi unik, hingga ultimate ability. Admin akan membangunnya dari nol khusus untukmu. Semakin wild imajinasimu, semakin legendaris skillnya.</div>
+          <div class="skill-price" style="font-size:18px;color:#ffd700;font-weight:800;">Rp 70.000+</div>
+          <div class="buy-tag" style="font-size:12px;padding:7px 16px;background:rgba(240,192,64,.2);border-color:rgba(240,192,64,.5);color:#ffd700;">Request Sekarang →</div>
         </div>
       </a>
 
@@ -597,7 +597,6 @@ footer strong{color:var(--purple-glow);}
       <a class="buyable" href="https://wa.me/6281270551570?text=Halo+admin%2C+saya+mau+beli+Fly+V1+Rp+20.000%0A%0AQRIS%3A+https%3A%2F%2Fimg2.pixhost.to%2Fimages%2F7681%2F722690235_media.jpg" target="_blank">
         <div class="skill-card buyable-card">
           <span class="skill-icon">🌀</span><div class="skill-name">Fly v1</div>
-          <span class="skill-badge badge-tmpl">Template</span>
           <div class="skill-desc">Memberikan efek levitasi seperti terkena serangan Shulker — melayang di udara sesaat. Bisa diatur durasi & ketinggiannya sesuai keinginan.</div>
           <div class="skill-price">Rp 20.000</div>
           <div class="buy-tag">Beli →</div>
@@ -607,7 +606,6 @@ footer strong{color:var(--purple-glow);}
       <a class="buyable" href="https://wa.me/6281270551570?text=Halo+admin%2C+saya+mau+beli+Fly+V2+Rp+60.000%0A%0AQRIS%3A+https%3A%2F%2Fimg2.pixhost.to%2Fimages%2F7681%2F722690235_media.jpg" target="_blank">
         <div class="skill-card buyable-card">
           <span class="skill-icon">🎈</span><div class="skill-name">Fly v2</div>
-          <span class="skill-badge badge-tmpl">Template</span>
           <div class="skill-desc">Terbang seperti lift udara yang naik turun perlahan. Kontrol stabil dan nyaman, sangat cocok untuk keperluan building dan konstruksi besar.</div>
           <div class="skill-price">Rp 60.000</div>
           <div class="buy-tag">Beli →</div>
@@ -617,7 +615,6 @@ footer strong{color:var(--purple-glow);}
       <a class="buyable" href="https://wa.me/6281270551570?text=Halo+admin%2C+saya+mau+beli+Fly+V3+Rp+150.000%0A%0AQRIS%3A+https%3A%2F%2Fimg2.pixhost.to%2Fimages%2F7681%2F722690235_media.jpg" target="_blank">
         <div class="skill-card buyable-card">
           <span class="skill-icon">✈️</span><div class="skill-name">Fly v3</div>
-          <span class="skill-badge badge-custom">Custom Skill</span>
           <div class="skill-desc">Terbebas dari gravitasi sepenuhnya seperti mode kreatif. Gerak bebas ke segala arah dengan kecepatan penuh — pengalaman terbang tanpa batas.</div>
           <div class="skill-price">Rp 150.000</div>
           <div class="buy-tag">Beli →</div>

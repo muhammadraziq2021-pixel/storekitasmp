@@ -69,27 +69,51 @@ a.buyable{text-decoration:none;color:inherit;display:block;}
 
 /* RANK */
 .rank-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:14px;}
-.rank-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:16px;padding:22px 14px 38px;text-align:center;position:relative;overflow:hidden;}
-.rank-card::before{content:'';position:absolute;inset:0;border-radius:16px;opacity:0;transition:opacity .3s;pointer-events:none;}
-.rank-card:hover::before{opacity:1;}
-.rank-nova::before{background:linear-gradient(135deg,rgba(100,80,180,.08),rgba(60,40,140,.08));}
-.rank-lunar::before{background:linear-gradient(135deg,rgba(150,100,255,.08),rgba(80,60,200,.08));}
-.rank-astra::before{background:linear-gradient(135deg,rgba(100,180,220,.08),rgba(60,120,180,.08));}
-.rank-solar::before{background:linear-gradient(135deg,rgba(255,200,50,.08),rgba(255,150,30,.08));}
-.rank-stellar::before{background:linear-gradient(135deg,rgba(255,220,80,.1),rgba(200,160,20,.08));}
+.rank-card{border-radius:16px;padding:22px 14px 38px;text-align:center;position:relative;overflow:hidden;}
+.rank-card::before{content:'';position:absolute;inset:0;border-radius:16px;opacity:1;pointer-events:none;transition:opacity .3s;}
+.rank-card:hover::before{opacity:1.4;}
+/* Nova — deep purple */
+.rank-nova{background:linear-gradient(135deg,rgba(20,10,50,.7),rgba(30,15,60,.7));border:1px solid rgba(140,120,220,.3);}
+.rank-nova::before{background:linear-gradient(135deg,rgba(140,120,220,.08),rgba(100,70,190,.06));}
+.rank-nova:hover{border-color:rgba(168,144,240,.6);box-shadow:0 0 20px rgba(140,120,220,.15),0 0 40px rgba(100,70,190,.08);}
+/* Lunar — soft violet */
+.rank-lunar{background:linear-gradient(135deg,rgba(25,12,55,.7),rgba(35,18,65,.7));border:1px solid rgba(180,140,255,.3);}
+.rank-lunar::before{background:linear-gradient(135deg,rgba(180,140,255,.08),rgba(130,90,220,.06));}
+.rank-lunar:hover{border-color:rgba(200,168,255,.6);box-shadow:0 0 20px rgba(180,140,255,.15),0 0 40px rgba(130,90,220,.08);}
+/* Astra — cyan-blue */
+.rank-astra{background:linear-gradient(135deg,rgba(10,20,45,.7),rgba(15,30,55,.7));border:1px solid rgba(96,192,224,.3);}
+.rank-astra::before{background:linear-gradient(135deg,rgba(96,192,224,.08),rgba(60,140,200,.06));}
+.rank-astra:hover{border-color:rgba(96,192,224,.6);box-shadow:0 0 20px rgba(96,192,224,.15),0 0 40px rgba(60,140,200,.08);}
+/* Solar — warm gold */
+.rank-solar{background:linear-gradient(135deg,rgba(35,22,8,.7),rgba(45,30,10,.7));border:1px solid rgba(255,192,64,.3);}
+.rank-solar::before{background:linear-gradient(135deg,rgba(255,192,64,.1),rgba(255,160,30,.06));}
+.rank-solar:hover{border-color:rgba(255,192,64,.6);box-shadow:0 0 20px rgba(255,192,64,.15),0 0 40px rgba(255,160,30,.08);}
+/* Stellar — bright gold */
+.rank-stellar{background:linear-gradient(135deg,rgba(40,30,5,.7),rgba(50,38,8,.7));border:1px solid rgba(255,220,128,.3);}
+.rank-stellar::before{background:linear-gradient(135deg,rgba(255,220,128,.1),rgba(224,192,64,.08));}
+.rank-stellar:hover{border-color:rgba(255,224,130,.6);box-shadow:0 0 20px rgba(255,220,128,.15),0 0 40px rgba(224,192,64,.08);}
+/* Nebula — teal-cyan */
+.rank-nebula{background:linear-gradient(135deg,rgba(8,25,30,.7),rgba(12,35,40,.7));border:1px solid rgba(0,229,204,.3);}
 .rank-nebula::before{background:linear-gradient(135deg,rgba(0,229,204,.1),rgba(30,150,200,.08));}
-.rank-gargantua::before{background:linear-gradient(135deg,rgba(224,64,160,.1),rgba(140,30,120,.08));}
-.rank-cosmic::before{background:linear-gradient(135deg,rgba(124,63,224,.12),rgba(45,126,245,.1),rgba(0,229,204,.08));}
-.rank-celestial::before{background:linear-gradient(135deg,rgba(255,220,100,.12),rgba(255,180,50,.1),rgba(255,140,0,.08));}
-.rank-card:hover.rank-nova{border-color:rgba(140,120,220,.5);}
-.rank-card:hover.rank-lunar{border-color:rgba(150,100,255,.5);}
-.rank-card:hover.rank-astra{border-color:rgba(100,180,220,.5);}
-.rank-card:hover.rank-solar{border-color:rgba(255,200,50,.5);}
-.rank-card:hover.rank-stellar{border-color:rgba(255,220,80,.5);}
-.rank-card:hover.rank-nebula{border-color:rgba(0,229,204,.5);}
-.rank-card:hover.rank-gargantua{border-color:rgba(224,64,160,.5);}
-.rank-card:hover.rank-cosmic{border-color:rgba(124,63,224,.6);}
-.rank-card:hover.rank-celestial{border-color:rgba(255,200,50,.6);}
+.rank-nebula:hover{border-color:rgba(0,229,204,.6);box-shadow:0 0 20px rgba(0,229,204,.15),0 0 40px rgba(30,150,200,.08);}
+/* Gargantua — magenta-pink */
+.rank-gargantua{background:linear-gradient(135deg,rgba(35,10,28,.7),rgba(45,15,35,.7));border:1px solid rgba(224,64,160,.3);}
+.rank-gargantua::before{background:linear-gradient(135deg,rgba(224,64,160,.1),rgba(160,32,120,.08));}
+.rank-gargantua:hover{border-color:rgba(224,64,160,.6);box-shadow:0 0 20px rgba(224,64,160,.15),0 0 40px rgba(160,32,120,.08);}
+/* Cosmic — purple-white ethereal */
+.rank-cosmic{background:linear-gradient(135deg,rgba(25,10,50,.7),rgba(40,20,60,.7));border:1px solid rgba(160,96,255,.35);}
+.rank-cosmic::before{background:linear-gradient(135deg,rgba(160,96,255,.1),rgba(200,180,255,.08));}
+.rank-cosmic:hover{border-color:rgba(200,180,255,.7);box-shadow:0 0 25px rgba(160,96,255,.18),0 0 50px rgba(200,180,255,.1);}
+/* Celestial — animated gold rainbow */
+.rank-celestial{background:linear-gradient(135deg,rgba(35,22,5,.7),rgba(30,18,4,.7));border:2px solid transparent;background-clip:padding-box;position:relative;}
+.rank-celestial::before{content:'';position:absolute;inset:-2px;border-radius:18px;padding:2px;background:linear-gradient(135deg,#ffd700,#ff8c00,#ff0066,#6600ff,#0088ff,#00ff88,#ffd700);background-size:300% 300%;animation:celestial-shift 4s ease infinite;z-index:-1;}
+.rank-celestial::after{content:'';position:absolute;inset:0;border-radius:16px;background:linear-gradient(135deg,rgba(255,215,0,.12),rgba(255,140,0,.08),rgba(255,100,0,.06),rgba(255,215,0,.1));opacity:1;pointer-events:none;}
+.rank-celestial:hover{box-shadow:0 0 30px rgba(255,200,0,.25),0 0 60px rgba(255,140,0,.15),0 0 90px rgba(255,100,0,.1);}
+/* Celestial decorations */
+.rank-celestial .rank-icon{animation:celestial-pulse 2.5s ease-in-out infinite;font-size:32px;margin-bottom:6px;display:block;filter:drop-shadow(0 0 8px rgba(255,200,50,.5));}
+.rank-celestial .rank-title-exclusive{font-size:11px;letter-spacing:2px;background:linear-gradient(135deg,#ffd700,#ffb830,#ff8c00);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:celestial-pulse 2.5s ease-in-out infinite;}
+@keyframes celestial-shift{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+@keyframes celestial-pulse{0%,100%{transform:scale(1);filter:drop-shadow(0 0 8px rgba(255,200,50,.5));}50%{transform:scale(1.05);filter:drop-shadow(0 0 16px rgba(255,200,50,.8));}}
 .rank-icon{font-size:30px;margin-bottom:8px;display:block;}
 .rank-name{font-family:'Orbitron',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;margin-bottom:6px;text-transform:uppercase;}
 .rank-nova .rank-name{color:#a890f0;}

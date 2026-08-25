@@ -206,7 +206,7 @@ footer strong{color:var(--gold-2);}
 .server-pane{display:none;}
 .server-pane.active{display:block;animation:fadein .4s ease;}
 @keyframes fadein{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
-@media(max-width:560px){.nav-links{gap:10px;}.nav-links a{font-size:10px;}.hero-logo{width:110px;height:110px;}}
+@media(max-width:760px){nav .wrap{flex-direction:column;align-items:center;gap:8px;}.nav-links{justify-content:center;gap:12px;}.nav-links a{font-size:10px;}.hero-logo{width:110px;height:110px;}}
 </style>
 </head>
 <body>
@@ -842,6 +842,10 @@ function setServer(s){
   document.getElementById('pane-rpg').classList.toggle('active', s==='rpg');
   document.getElementById('btn-economy').classList.toggle('active', s==='economy');
   document.getElementById('btn-rpg').classList.toggle('active', s==='rpg');
+  document.querySelectorAll('#nav-links a').forEach(a=>{
+    const f=a.dataset.server;
+    a.style.display = (f==='both'||f===s)?'':'none';
+  });
 }
 function goTo(id){
   let el=document.getElementById(id)||document.getElementById(id+'-rpg');
@@ -854,7 +858,8 @@ function goTo(id){
   }
   el.scrollIntoView({behavior:'smooth'});
 }
-setServer('economy');
+const hs=location.hash.replace('#','');
+setServer(hs==='rpg'?'rpg':'economy');
 </script>
 
 </body>

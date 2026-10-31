@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kita Network VIP Store</title>
-<meta name="description" content="Katalog VIP Kita Network: rank, kit, fly, partikel, dan currency untuk server Economy dan RPG. Isi gamertag, bayar lewat QRIS, lanjut ke WhatsApp.">
+<meta name="description" content="Katalog VIP Kita Network: rank, kit, fly, partikel, dan currency. Isi gamertag, bayar lewat QRIS, lanjut ke WhatsApp.">
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,11 +25,6 @@
       </span>
     </a>
 
-    <div class="server-switch" role="group" aria-label="Pilih server">
-      <button type="button" class="server-tab" id="tab-economy" aria-pressed="true" aria-controls="pane-economy">Economy</button>
-      <button type="button" class="server-tab" id="tab-rpg" aria-pressed="false" aria-controls="pane-rpg">RPG</button>
-    </div>
-
     <a class="ghost header-admin" href="https://wa.me/6281270551570" target="_blank" rel="noopener">Chat admin</a>
   </div>
 </header>
@@ -41,7 +36,7 @@
       <div class="hero-lead">
         <p class="kicker">Harga Rupiah · Pembayaran QRIS</p>
         <h1><span class="h1-main">Kita Network</span><span class="h1-alt">VIP Store</span></h1>
-        <p class="hero-copy">Rank, kit, fly, partikel, dan currency untuk dua server. Pilih item, isi gamertag, bayar lewat QRIS, lalu kirim bukti ke admin.</p>
+        <p class="hero-copy">Rank, kit, fly, partikel, dan currency untuk server Kita Network. Pilih item, isi gamertag, bayar lewat QRIS, lalu kirim bukti ke admin.</p>
 
         <div class="buyer-status">
           <span class="bs-label">Data pembeli</span>
@@ -52,297 +47,199 @@
         <p class="hero-admin">Ada pertanyaan sebelum beli? <a href="https://wa.me/6281270551570" target="_blank" rel="noopener">Chat admin</a>.</p>
       </div>
 
-      <aside class="server-note" aria-label="Server yang sedang dibuka">
-        <p class="note-label">Server aktif</p>
-        <p class="note-name" id="server-note-name">Economy</p>
-        <p class="note-desc" id="server-note-desc">Survival Economy Server</p>
-        <ul class="note-cats" id="server-note-cats">
-          <li>Rank</li><li>Ability</li><li>Kit</li><li>Fly</li><li>Partikel</li><li>Aksesoris</li><li>MISC</li>
-        </ul>
+      <aside class="hero-side" aria-labelledby="steps-title">
+        <h2 class="steps-title" id="steps-title">Cara beli</h2>
+        <ol class="steps">
+          <li><span class="step-n">1</span><p>Pilih item di katalog.</p></li>
+          <li><span class="step-n">2</span><p>Klik Beli, isi nama atau gamertag dan tipe Minecraft.</p></li>
+          <li><span class="step-n">3</span><p>Buka gambar QRIS, bayar sesuai harga, simpan bukti.</p></li>
+          <li><span class="step-n">4</span><p>Kirim pesan ke admin. Item, harga, gamertag, dan tipe sudah terisi otomatis.</p></li>
+        </ol>
       </aside>
-    </div>
-
-    <div class="shell">
-      <ol class="steps">
-        <li><span class="step-n">1</span><p>Pilih server, lalu pilih item di katalog.</p></li>
-        <li><span class="step-n">2</span><p>Klik Beli, isi nama atau gamertag dan tipe Minecraft.</p></li>
-        <li><span class="step-n">3</span><p>Buka gambar QRIS, bayar sesuai harga, simpan bukti.</p></li>
-        <li><span class="step-n">4</span><p>Kirim pesan ke admin. Item, harga, gamertag, dan tipe sudah terisi otomatis.</p></li>
-      </ol>
     </div>
   </section>
 
-  <!-- ================= SERVER ECONOMY ================= -->
-  <div class="server-pane" id="pane-economy">
-    <nav class="index-bar shell" aria-label="Kategori Economy">
-      <a href="#rank">Rank</a>
-      <a href="#banding">Perbandingan</a>
-      <a href="#ability">Ability</a>
-      <a href="#kit">Kit</a>
-      <a href="#fly">Fly</a>
-      <a href="#partikel">Partikel</a>
-      <a href="#aksesoris">Aksesoris</a>
-      <a href="#misc">MISC</a>
-    </nav>
+  <nav class="index-bar shell" aria-label="Kategori">
+    <a href="#rank">Rank</a>
+    <a href="#banding">Perbandingan</a>
+    <a href="#ability">Ability</a>
+    <a href="#kit">Kit</a>
+    <a href="#fly">Fly</a>
+    <a href="#partikel">Partikel</a>
+    <a href="#aksesoris">Aksesoris</a>
+    <a href="#misc">MISC</a>
+  </nav>
 
-    <section class="section" id="rank">
-      <div class="shell">
-        <div class="sec-head">
-          <span class="sec-index">01</span>
-          <div>
-            <h2>Rank Economy</h2>
-            <p class="sec-note">Semua rank sudah termasuk Title Exclusive, berlaku permanen, dan tetap ada di season selanjutnya.</p>
-          </div>
-        </div>
-
-        <h3 class="group-head">Rank inti <span>Nova sampai Gargantua</span></h3>
-        <div id="eco-rank-core"></div>
-
-        <h3 class="group-head">Rank puncak <span>Cosmic sampai Empyrean</span></h3>
-        <div id="eco-rank-peak"></div>
-      </div>
-    </section>
-
-    <section class="section" id="banding">
-      <div class="shell">
-        <div class="sec-head">
-          <span class="sec-index">02</span>
-          <div>
-            <h2>Perbandingan benefit</h2>
-            <p class="sec-note">Angka di tabel sama dengan isi tiap rank di atas. Geser ke samping untuk melihat semua rank.</p>
-          </div>
-        </div>
-        <div class="table-scroll">
-          <table class="cmp">
-            <caption>Benefit rank Economy per rank</caption>
-            <thead>
-              <tr>
-                <th scope="col">Benefit</th>
-                <th scope="col">Nova</th>
-                <th scope="col">Lunar</th>
-                <th scope="col">Astra</th>
-                <th scope="col">Solar</th>
-                <th scope="col">Athena</th>
-                <th scope="col">Stellar</th>
-                <th scope="col">Nexus</th>
-                <th scope="col">Nebula</th>
-                <th scope="col">Gargantua</th>
-                <th scope="col">Cosmic</th>
-                <th scope="col">Celestial</th>
-                <th scope="col">Quasar</th>
-                <th scope="col">Empyrean</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><th scope="row">❤️ Tambahan Hati</th><td>+2</td><td>+5</td><td>+7</td><td>+10</td><td>+15</td><td>+20</td><td>+25</td><td>+30</td><td>+35</td><td>+40</td><td>+50</td><td>+60</td><td>+70</td></tr>
-              <tr><th scope="row">🏠 /sethome</th><td>11</td><td>12</td><td>15</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td><td>90</td><td>90</td><td>90</td></tr>
-              <tr><th scope="row">💰 Sell Bonus</th><td class="dash">·</td><td>+20%</td><td>+30%</td><td>+40%</td><td>+40%</td><td>+50%</td><td>+50%</td><td>+60%</td><td>+65%</td><td>+70%</td><td>+80%</td><td>+90%</td><td>+120%</td></tr>
-              <tr><th scope="row">📈 Skill Multiplier</th><td class="dash">·</td><td>+20%</td><td>+30%</td><td>+40%</td><td>+40%</td><td>+50%</td><td>+50%</td><td>+60%</td><td>+65%</td><td>+70%</td><td>+80%</td><td>+90%</td><td>+120%</td></tr>
-              <tr><th scope="row">🎯 Free Skill</th><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td>1</td><td>1</td><td>2</td><td>2</td><td>3</td><td>4</td><td>4</td><td>4</td></tr>
-              <tr><th scope="row">✈️ Fly</th><td class="dash">·</td><td class="dash">·</td><td>v1</td><td>v1</td><td>v1</td><td>v2</td><td>v2</td><td>v2</td><td>v2</td><td>v3</td><td>v3</td><td>v3</td><td>v3</td></tr>
-              <tr><th scope="row">🎒 Backpack</th><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td>3 Slot</td><td>5 Slot</td><td>8 Slot</td><td>10 Slot</td><td>15 Slot</td><td>20 Slot</td><td>30 Slot</td><td>50 Slot</td></tr>
-              <tr><th scope="row">📱 Portable Commands</th><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td>2</td><td>3</td><td>4</td><td>5</td><td>5</td><td>5</td><td>5</td><td>5</td><td>5</td></tr>
-              <tr><th scope="row">💊 /heal &amp; /feed</th><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-              <tr><th scope="row">🔧 /repair</th><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-              <tr><th scope="row">✏️ /nick, /ptime, /pweather</th><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-              <tr><th scope="row">✨ Bebas Pilih Partikel</th><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td>1</td><td>2</td><td>3</td></tr>
-              <tr><th scope="row">🎁 Claim Kit Bebas</th><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td>1</td><td>1</td><td>1</td></tr>
-              <tr><th scope="row">🎁 Daily Reward Tier</th><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>3</td><td>3</td><td>3</td><td>4</td><td>4</td></tr>
-            </tbody>
-          </table>
+  <section class="section" id="rank">
+    <div class="shell">
+      <div class="sec-head">
+        <span class="sec-index">01</span>
+        <div>
+          <h2>Rank</h2>
+          <p class="sec-note">Semua rank sudah termasuk Title Exclusive, berlaku permanen, dan tetap ada di season selanjutnya.</p>
         </div>
       </div>
-    </section>
 
-    <section class="section" id="ability">
-      <div class="shell">
-        <div class="sec-head">
-          <span class="sec-index">03</span>
-          <div>
-            <h2>Ability</h2>
-            <p class="sec-note">Ability tambahan di luar bawaan rank. Bisa dibeli berkali-kali dan efeknya menumpuk.</p>
-          </div>
-        </div>
-        <div class="board" id="eco-ability-grid"></div>
-      </div>
-    </section>
+      <h3 class="group-head">Rank inti <span>Nova sampai Gargantua</span></h3>
+      <div id="rank-core"></div>
 
-    <section class="section" id="kit">
-      <div class="shell">
-        <div class="sec-head">
-          <span class="sec-index">04</span>
-          <div>
-            <h2>Kit</h2>
-            <p class="sec-note">Setiap kit hanya bisa diambil 1x (One Time Claim).</p>
-          </div>
-        </div>
-        <div class="kit-grid" id="eco-kit-grid"></div>
-      </div>
-    </section>
+      <h3 class="group-head">Rank puncak <span>Cosmic sampai Empyrean</span></h3>
+      <div id="rank-peak"></div>
+    </div>
+  </section>
 
-    <section class="section" id="fly">
-      <div class="shell">
-        <div class="sec-head">
-          <span class="sec-index">05</span>
-          <div>
-            <h2>Fly</h2>
-            <p class="sec-note">Tiga varian terbang dengan cara kerja berbeda. Semua berlaku permanen.</p>
-          </div>
-        </div>
-        <div class="table-scroll">
-          <table class="fly">
-            <caption class="sr-only">Perbandingan Fly v1, Fly v2, dan Fly v3</caption>
-            <thead>
-              <tr><th scope="col">Varian</th><th scope="col">Cara kerja</th><th scope="col" class="col-price">Harga</th><th scope="col" class="col-act"><span class="sr-only">Beli</span></th></tr>
-            </thead>
-            <tbody id="eco-fly-body"></tbody>
-          </table>
+  <section class="section" id="banding">
+    <div class="shell">
+      <div class="sec-head">
+        <span class="sec-index">02</span>
+        <div>
+          <h2>Perbandingan benefit</h2>
+          <p class="sec-note">Angka di tabel sama dengan isi tiap rank di atas. Geser ke samping untuk melihat semua rank.</p>
         </div>
       </div>
-    </section>
-
-    <section class="section" id="partikel">
-      <div class="shell">
-        <div class="sec-head">
-          <span class="sec-index">06</span>
-          <div>
-            <h2>Partikel</h2>
-            <p class="sec-note">Style partikel dibeli per tampilan dan berlaku permanen. Efek di bawah bisa dipilih sendiri setelah membeli.</p>
-          </div>
-        </div>
-
-        <details class="effects">
-          <summary><span>Lihat <span id="peb-count">semua</span> efek partikel yang bisa dipilih</span></summary>
-          <div class="effects-body">
-            <div class="effects-grid" id="peb-grid"></div>
-            <p class="effects-note">Beberapa efek bisa dikombinasikan dengan warna custom. Tanyakan admin untuk melihat preview langsung di server.</p>
-          </div>
-        </details>
-
-        <h3 class="group-head">Standar <span>Rp 15.000 sampai Rp 50.000</span></h3>
-        <div class="entry-list" id="particle-standar"></div>
-
-        <h3 class="group-head">Premium <span>Rp 60.000 sampai Rp 100.000</span></h3>
-        <div class="entry-list" id="particle-premium"></div>
-
-        <h3 class="group-head">Sultan <span>Rp 100.000</span></h3>
-        <div class="entry-list" id="particle-sultan"></div>
+      <div class="table-scroll">
+        <table class="cmp">
+          <caption>Benefit rank per rank</caption>
+          <thead>
+            <tr>
+              <th scope="col">Benefit</th>
+              <th scope="col">Nova</th>
+              <th scope="col">Lunar</th>
+              <th scope="col">Astra</th>
+              <th scope="col">Solar</th>
+              <th scope="col">Athena</th>
+              <th scope="col">Stellar</th>
+              <th scope="col">Nexus</th>
+              <th scope="col">Nebula</th>
+              <th scope="col">Gargantua</th>
+              <th scope="col">Cosmic</th>
+              <th scope="col">Celestial</th>
+              <th scope="col">Quasar</th>
+              <th scope="col">Empyrean</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">❤️ Tambahan Hati</th><td>+2</td><td>+5</td><td>+7</td><td>+10</td><td>+15</td><td>+20</td><td>+25</td><td>+30</td><td>+35</td><td>+40</td><td>+50</td><td>+60</td><td>+70</td></tr>
+            <tr><th scope="row">🏠 /sethome</th><td>11</td><td>12</td><td>15</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td><td>90</td><td>90</td><td>90</td></tr>
+            <tr><th scope="row">💰 Sell Bonus</th><td class="dash">·</td><td>+20%</td><td>+30%</td><td>+40%</td><td>+40%</td><td>+50%</td><td>+50%</td><td>+60%</td><td>+65%</td><td>+70%</td><td>+80%</td><td>+90%</td><td>+120%</td></tr>
+            <tr><th scope="row">📈 Skill Multiplier</th><td class="dash">·</td><td>+20%</td><td>+30%</td><td>+40%</td><td>+40%</td><td>+50%</td><td>+50%</td><td>+60%</td><td>+65%</td><td>+70%</td><td>+80%</td><td>+90%</td><td>+120%</td></tr>
+            <tr><th scope="row">🎯 Free Skill</th><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td>1</td><td>1</td><td>2</td><td>2</td><td>3</td><td>4</td><td>4</td><td>4</td></tr>
+            <tr><th scope="row">✈️ Fly</th><td class="dash">·</td><td class="dash">·</td><td>v1</td><td>v1</td><td>v1</td><td>v2</td><td>v2</td><td>v2</td><td>v3</td><td>v3</td><td>v3</td><td>v3</td><td>v3</td></tr>
+            <tr><th scope="row">🎒 Backpack</th><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td>3 Slot</td><td>5 Slot</td><td>8 Slot</td><td>10 Slot</td><td>15 Slot</td><td>20 Slot</td><td>30 Slot</td><td>50 Slot</td></tr>
+            <tr><th scope="row">📱 Portable Commands</th><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td>2</td><td>3</td><td>4</td><td>5</td><td>5</td><td>5</td><td>5</td><td>5</td><td>5</td></tr>
+            <tr><th scope="row">💊 /heal &amp; /feed</th><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
+            <tr><th scope="row">🔧 /repair</th><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
+            <tr><th scope="row">✏️ /nick, /ptime, /pweather</th><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
+            <tr><th scope="row">✨ Bebas Pilih Partikel</th><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td>1</td><td>2</td><td>3</td></tr>
+            <tr><th scope="row">🎁 Claim Kit Bebas</th><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td>1</td><td>1</td><td>1</td></tr>
+            <tr><th scope="row">🎁 Daily Reward Tier</th><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>3</td><td>3</td><td>3</td><td>4</td><td>4</td></tr>
+          </tbody>
+        </table>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section" id="aksesoris">
-      <div class="shell">
-        <div class="sec-head">
-          <span class="sec-index">07</span>
-          <div>
-            <h2>Aksesoris</h2>
-            <p class="sec-note">Item kosmetik ini belum dijual. Halaman akan diperbarui kalau sudah siap.</p>
-          </div>
-        </div>
-        <div class="soon" id="aksesoris-list"></div>
-      </div>
-    </section>
-
-    <section class="section" id="misc">
-      <div class="shell">
-        <div class="sec-head">
-          <span class="sec-index">08</span>
-          <div>
-            <h2>MISC</h2>
-            <p class="sec-note">Item dan layanan tambahan untuk server Economy.</p>
-          </div>
-        </div>
-        <div class="entry-list" id="eco-misc-list"></div>
-      </div>
-    </section>
-  </div>
-
-  <!-- ================= SERVER RPG ================= -->
-  <div class="server-pane" id="pane-rpg" hidden>
-    <nav class="index-bar shell" aria-label="Kategori RPG">
-      <a href="#rank-rpg">Rank</a>
-      <a href="#banding-rpg">Perbandingan</a>
-      <a href="#currency-rpg">Currency</a>
-    </nav>
-
-    <section class="section" id="rank-rpg">
-      <div class="shell">
-        <div class="sec-head">
-          <span class="sec-index">01</span>
-          <div>
-            <h2>Rank RPG</h2>
-            <p class="sec-note">Harga sudah termasuk diskon 20%. Rank berlaku permanen dan tetap ada di season selanjutnya.</p>
-          </div>
-        </div>
-
-        <h3 class="group-head">Rank inti <span>Nova sampai Gargantua</span></h3>
-        <div id="rpg-rank-core"></div>
-
-        <h3 class="group-head">Rank puncak <span>Cosmic sampai Emphyrean</span></h3>
-        <div id="rpg-rank-peak"></div>
-      </div>
-    </section>
-
-    <section class="section" id="banding-rpg">
-      <div class="shell">
-        <div class="sec-head">
-          <span class="sec-index">02</span>
-          <div>
-            <h2>Perbandingan benefit</h2>
-            <p class="sec-note">Angka di tabel sama dengan isi tiap rank di atas. Geser ke samping untuk melihat semua rank.</p>
-          </div>
-        </div>
-        <div class="table-scroll">
-          <table class="cmp">
-            <caption>Benefit rank RPG per rank</caption>
-            <thead>
-              <tr>
-                <th scope="col">Benefit</th>
-                <th scope="col">Nova</th>
-                <th scope="col">Lunar</th>
-                <th scope="col">Astra</th>
-                <th scope="col">Solar</th>
-                <th scope="col">Athena</th>
-                <th scope="col">Stellar</th>
-                <th scope="col">Nexus</th>
-                <th scope="col">Nebula</th>
-                <th scope="col">Gargantua</th>
-                <th scope="col">Cosmic</th>
-                <th scope="col">Celestial</th>
-                <th scope="col">Quasar</th>
-                <th scope="col">Emphyrean</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><th scope="row">🏠 Max Sethome</th><td>5</td><td>8</td><td>10</td><td>15</td><td>18</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>50</td><td>80</td><td>100</td></tr>
-              <tr><th scope="row">🏪 Auction House Slots</th><td>5</td><td>8</td><td>10</td><td>15</td><td>18</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>50</td><td>50</td><td>100</td></tr>
-              <tr><th scope="row">📈 Skill Multiplier</th><td class="dash">·</td><td>+20%</td><td>+30%</td><td>+40%</td><td>+40%</td><td>+50%</td><td>+50%</td><td>+60%</td><td>+65%</td><td>+70%</td><td>+80%</td><td>+90%</td><td>+120%</td></tr>
-              <tr><th scope="row">💰 Sell Multiplier</th><td class="dash">·</td><td>+20%</td><td>+30%</td><td>+40%</td><td>+40%</td><td>+50%</td><td>+50%</td><td>+60%</td><td>+65%</td><td>+70%</td><td>+80%</td><td>+90%</td><td>+120%</td></tr>
-              <tr><th scope="row">🎁 Rank Kit</th><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-              <tr><th scope="row">✨ Special Skill</th><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td>❄️ Freeze</td><td>❄️ 🔥 ⚡</td></tr>
-              <tr><th scope="row">⚡ Special Command</th><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td>1</td><td>1</td><td>1</td><td>3</td><td>5</td><td>5</td><td>6</td></tr>
-              <tr><th scope="row">📱 Portable Commands</th><td class="dash">·</td><td class="dash">·</td><td>1</td><td>3</td><td>4</td><td>5</td><td>5</td><td>5</td><td>5</td><td>5</td><td>5</td><td>5</td><td>5</td></tr>
-              <tr><th scope="row">📢 Broadcast</th><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-              <tr><th scope="row">🎁 Daily Reward Tier</th><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>3</td><td>3</td><td>3</td><td>4</td><td>4</td></tr>
-            </tbody>
-          </table>
+  <section class="section" id="ability">
+    <div class="shell">
+      <div class="sec-head">
+        <span class="sec-index">03</span>
+        <div>
+          <h2>Ability</h2>
+          <p class="sec-note">Ability tambahan di luar bawaan rank. Bisa dibeli berkali-kali dan efeknya menumpuk.</p>
         </div>
       </div>
-    </section>
+      <div class="board" id="ability-grid"></div>
+    </div>
+  </section>
 
-    <section class="section" id="currency-rpg">
-      <div class="shell">
-        <div class="sec-head">
-          <span class="sec-index">03</span>
-          <div>
-            <h2>Currency RPG</h2>
-            <p class="sec-note">Mata uang premium untuk server RPG.</p>
-          </div>
+  <section class="section" id="kit">
+    <div class="shell">
+      <div class="sec-head">
+        <span class="sec-index">04</span>
+        <div>
+          <h2>Kit</h2>
+          <p class="sec-note">Setiap kit hanya bisa diambil 1x (One Time Claim).</p>
         </div>
-        <div class="entry-list" id="rpg-currency-list"></div>
       </div>
-    </section>
-  </div>
+      <div class="kit-grid" id="kit-grid"></div>
+    </div>
+  </section>
+
+  <section class="section" id="fly">
+    <div class="shell">
+      <div class="sec-head">
+        <span class="sec-index">05</span>
+        <div>
+          <h2>Fly</h2>
+          <p class="sec-note">Tiga varian terbang dengan cara kerja berbeda. Semua berlaku permanen.</p>
+        </div>
+      </div>
+      <div class="table-scroll">
+        <table class="fly">
+          <caption class="sr-only">Perbandingan Fly v1, Fly v2, dan Fly v3</caption>
+          <thead>
+            <tr><th scope="col">Varian</th><th scope="col">Cara kerja</th><th scope="col" class="col-price">Harga</th><th scope="col" class="col-act"><span class="sr-only">Beli</span></th></tr>
+          </thead>
+          <tbody id="fly-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="partikel">
+    <div class="shell">
+      <div class="sec-head">
+        <span class="sec-index">06</span>
+        <div>
+          <h2>Partikel</h2>
+          <p class="sec-note">Style partikel dibeli per tampilan dan berlaku permanen. Efek di bawah bisa dipilih sendiri setelah membeli.</p>
+        </div>
+      </div>
+
+      <details class="effects">
+        <summary><span>Lihat <span id="peb-count">semua</span> efek partikel yang bisa dipilih</span></summary>
+        <div class="effects-body">
+          <div class="effects-grid" id="peb-grid"></div>
+          <p class="effects-note">Beberapa efek bisa dikombinasikan dengan warna custom. Tanyakan admin untuk melihat preview langsung di server.</p>
+        </div>
+      </details>
+
+      <h3 class="group-head">Standar <span>Rp 15.000 sampai Rp 50.000</span></h3>
+      <div class="entry-list" id="particle-standar"></div>
+
+      <h3 class="group-head">Premium <span>Rp 60.000 sampai Rp 100.000</span></h3>
+      <div class="entry-list" id="particle-premium"></div>
+
+      <h3 class="group-head">Sultan <span>Rp 100.000</span></h3>
+      <div class="entry-list" id="particle-sultan"></div>
+    </div>
+  </section>
+
+  <section class="section" id="aksesoris">
+    <div class="shell">
+      <div class="sec-head">
+        <span class="sec-index">07</span>
+        <div>
+          <h2>Aksesoris</h2>
+          <p class="sec-note">Item kosmetik ini belum dijual. Halaman akan diperbarui kalau sudah siap.</p>
+        </div>
+      </div>
+      <div class="soon" id="aksesoris-list"></div>
+    </div>
+  </section>
+
+  <section class="section" id="misc">
+    <div class="shell">
+      <div class="sec-head">
+        <span class="sec-index">08</span>
+        <div>
+          <h2>MISC</h2>
+          <p class="sec-note">Item dan layanan tambahan untuk server Kita Network.</p>
+        </div>
+      </div>
+      <div class="entry-list" id="misc-list"></div>
+    </div>
+  </section>
 
 </main>
 
@@ -351,7 +248,7 @@
     <div class="footer-grid">
       <div>
         <p class="footer-brand">Kita Network</p>
-        <p class="footer-copy">Toko VIP untuk server Economy dan RPG. Pertanyaan di luar pembelian bisa langsung lewat WhatsApp.</p>
+        <p class="footer-copy">Toko VIP Kita Network. Pertanyaan di luar pembelian bisa langsung lewat WhatsApp.</p>
       </div>
       <div class="footer-links">
         <a class="ghost" href="https://wa.me/6281270551570" target="_blank" rel="noopener">Chat admin</a>

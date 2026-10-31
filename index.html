@@ -2,818 +2,404 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kita Network — VIP Store</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kita Network VIP Store</title>
+<meta name="description" content="Katalog VIP Kita Network: rank, kit, fly, partikel, dan currency untuk server Economy dan RPG. Isi gamertag, bayar lewat QRIS, lanjut ke WhatsApp.">
 <link rel="icon" type="image/png" href="logo.png">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#0a0908;--bg2:#12100c;
-  --gold:#d4af37;--gold-2:#f0d878;--gold-deep:#8a6d1f;
-  --white:#f5efdd;--muted:#9a8f74;
-  --card:rgba(24,20,12,.72);--card-border:rgba(212,175,55,.22);
-}
-*{margin:0;padding:0;box-sizing:border-box;}
-body{background:var(--bg);color:var(--white);font-family:'Jost',sans-serif;font-size:16px;overflow-x:hidden;min-height:100vh;}
-body::before{content:'';position:fixed;inset:0;background-image:
-  radial-gradient(1px 1px at 10% 15%,rgba(240,216,120,.7) 0%,transparent 100%),
-  radial-gradient(1px 1px at 30% 5%,rgba(255,255,255,.5) 0%,transparent 100%),
-  radial-gradient(1.5px 1.5px at 50% 25%,rgba(240,216,120,.6) 0%,transparent 100%),
-  radial-gradient(1px 1px at 70% 10%,rgba(255,255,255,.4) 0%,transparent 100%),
-  radial-gradient(1px 1px at 90% 20%,rgba(240,216,120,.7) 0%,transparent 100%),
-  radial-gradient(1px 1px at 15% 40%,rgba(255,255,255,.35) 0%,transparent 100%),
-  radial-gradient(1.5px 1.5px at 45% 55%,rgba(240,216,120,.5) 0%,transparent 100%),
-  radial-gradient(1px 1px at 75% 45%,rgba(255,255,255,.5) 0%,transparent 100%),
-  radial-gradient(1px 1px at 25% 75%,rgba(240,216,120,.6) 0%,transparent 100%),
-  radial-gradient(1.5px 1.5px at 60% 80%,rgba(255,255,255,.4) 0%,transparent 100%),
-  radial-gradient(2px 2px at 20% 30%,rgba(212,175,55,.6) 0%,transparent 100%),
-  radial-gradient(1.5px 1.5px at 80% 70%,rgba(212,175,55,.5) 0%,transparent 100%),
-  radial-gradient(2px 2px at 65% 35%,rgba(255,230,150,.5) 0%,transparent 100%);
-  pointer-events:none;z-index:0;}
-body::after{content:'';position:fixed;inset:0;background:
-  radial-gradient(ellipse 60% 40% at 20% 50%,rgba(138,109,31,.14) 0%,transparent 70%),
-  radial-gradient(ellipse 50% 60% at 80% 30%,rgba(212,175,55,.07) 0%,transparent 70%),
-  radial-gradient(ellipse 40% 50% at 60% 80%,rgba(180,120,40,.06) 0%,transparent 70%);
-  pointer-events:none;z-index:0;}
-.wrap{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 24px;}
-
-nav{position:sticky;top:0;z-index:100;background:rgba(10,9,8,.92);border-bottom:1px solid rgba(212,175,55,.25);backdrop-filter:blur(12px);padding:10px 0;}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;}
-.nav-brand{display:flex;align-items:center;gap:12px;}
-.nav-logo-img{width:44px;height:44px;object-fit:contain;filter:drop-shadow(0 0 8px rgba(212,175,55,.45));}
-.nav-logo{font-family:'Cinzel',serif;font-size:17px;font-weight:900;letter-spacing:2px;color:var(--white);white-space:nowrap;}
-.nav-logo span{background:linear-gradient(135deg,#f0d878,#d4af37,#b8860b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.nav-links{display:flex;gap:16px;flex-wrap:wrap;}
-.nav-links a{color:var(--muted);text-decoration:none;font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;transition:color .2s;}
-.nav-links a:hover{color:var(--gold-2);}
-
-.hero{text-align:center;padding:80px 0 60px;}
-.hero-logo{display:block;margin:0 auto 22px;width:150px;height:150px;object-fit:contain;filter:drop-shadow(0 0 30px rgba(212,175,55,.4));animation:logo-float 5s ease-in-out infinite;}
-@keyframes logo-float{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
-.hero-badge{display:inline-block;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.4);color:var(--gold-2);font-size:11px;letter-spacing:4px;text-transform:uppercase;padding:6px 20px;border-radius:20px;margin-bottom:22px;font-family:'Cinzel',serif;}
-.hero h1{font-family:'Cinzel',serif;font-size:clamp(34px,6vw,64px);font-weight:900;line-height:1.15;margin-bottom:18px;animation:pulse-glow 4s ease-in-out infinite;}
-.hero h1 .glow{background:linear-gradient(135deg,#f7e7a0,#d4af37,#b8860b,#f0d878);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.hero-sub{color:var(--muted);font-size:17px;max-width:520px;margin:0 auto 30px;line-height:1.7;font-weight:300;}
-.wa-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(212,175,55,.14),rgba(212,175,55,.06));border:1px solid rgba(212,175,55,.45);color:var(--gold-2);font-size:12px;font-family:'Cinzel',serif;letter-spacing:1.5px;text-transform:uppercase;padding:11px 24px;border-radius:24px;cursor:pointer;text-decoration:none;transition:all .25s;}
-.wa-btn:hover{background:rgba(212,175,55,.22);border-color:rgba(212,175,55,.8);transform:translateY(-2px);box-shadow:0 0 24px rgba(212,175,55,.25);}
-.hero-divider{width:120px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:30px auto 0;position:relative;}
-.hero-divider::after{content:'◆';position:absolute;top:-7px;left:50%;transform:translateX(-50%);color:var(--gold);font-size:9px;}
-
-/* SERVER SWITCHER */
-.server-switch{display:flex;justify-content:center;gap:0;margin:34px auto 0;max-width:520px;border:1px solid rgba(212,175,55,.35);border-radius:40px;overflow:hidden;background:rgba(15,13,9,.8);padding:5px;}
-.server-btn{flex:1;padding:14px 10px;text-align:center;cursor:pointer;border-radius:32px;transition:all .3s;border:none;background:transparent;color:var(--muted);font-family:'Cinzel',serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;}
-.server-btn small{display:block;font-family:'Jost',sans-serif;font-size:10px;font-weight:400;letter-spacing:1px;text-transform:none;margin-top:3px;opacity:.75;}
-.server-btn.active{background:linear-gradient(135deg,#f0d878,#d4af37);color:#1a1405;box-shadow:0 0 24px rgba(212,175,55,.35);}
-.server-btn:not(.active):hover{color:var(--gold-2);}
-
-section{padding:60px 0;}
-.section-header{text-align:center;margin-bottom:44px;}
-.section-label{font-size:11px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);font-family:'Cinzel',serif;margin-bottom:10px;display:block;}
-.section-title{font-family:'Cinzel',serif;font-size:clamp(20px,3vw,30px);font-weight:700;background:linear-gradient(135deg,#f7e7a0,#d4af37);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px;}
-.section-desc{color:var(--muted);font-size:14px;font-weight:300;}
-.sub-label{font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:rgba(154,143,116,.7);text-transform:uppercase;margin:0 0 14px;display:block;}
-
-.label-badge{position:absolute;top:12px;right:12px;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;font-family:'Cinzel',serif;font-weight:700;z-index:10;}
-.label-permanent{background:rgba(212,175,55,.14);border:1px solid rgba(212,175,55,.45);color:var(--gold-2);}
-.label-onetime{background:rgba(200,80,60,.14);border:1px solid rgba(220,100,80,.4);color:#ff9070;}
-
-a.buyable{text-decoration:none;color:inherit;display:block;}
-.buyable-card{position:relative;cursor:pointer;transition:transform .25s,border-color .25s,box-shadow .25s;}
-.buyable-card:hover{transform:translateY(-5px);}
-.buy-tag{position:absolute;bottom:12px;right:12px;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.4);color:var(--gold-2);font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;font-family:'Cinzel',serif;opacity:0;transition:opacity .2s;pointer-events:none;}
-.buyable-card:hover .buy-tag{opacity:1;}
-
-/* RANK */
-.rank-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;}
-.rank-card{border-radius:16px;padding:22px 14px 38px;text-align:center;position:relative;overflow:hidden;background:linear-gradient(160deg,rgba(30,25,14,.75),rgba(16,13,8,.75));border:1px solid var(--card-border);}
-.rank-card::before{content:'';position:absolute;inset:0;border-radius:16px;background:linear-gradient(135deg,rgba(212,175,55,.06),transparent 60%);pointer-events:none;}
-.rank-card:hover{border-color:rgba(212,175,55,.55);box-shadow:0 0 24px rgba(212,175,55,.14);}
-.rank-icon{font-size:30px;margin-bottom:8px;display:block;}
-.rank-name{font-family:'Cinzel',serif;font-size:13px;font-weight:700;letter-spacing:2px;margin-bottom:6px;text-transform:uppercase;color:var(--gold-2);}
-.rank-price-row{display:flex;align-items:baseline;justify-content:center;gap:8px;flex-wrap:wrap;}
-.rank-price-old{font-size:13px;font-weight:500;color:var(--muted);font-family:'Jost',sans-serif;text-decoration:line-through;text-decoration-color:rgba(255,90,90,.8);opacity:.75;}
-.rank-price{font-size:19px;font-weight:700;color:var(--white);font-family:'Cinzel',serif;}
-.discount-badge{position:absolute;top:12px;left:12px;background:linear-gradient(135deg,#ff6b4a,#d43a2a);color:#fff;font-size:10px;letter-spacing:1px;padding:4px 9px;border-radius:20px;font-family:'Cinzel',serif;font-weight:700;z-index:10;box-shadow:0 0 12px rgba(212,60,40,.4);}
-.rank-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.35),transparent);margin:10px 0;}
-.rank-benefits{list-style:none;text-align:left;}
-.rank-benefits li{font-size:12px;color:rgba(230,220,190,.75);padding:3px 0;display:flex;align-items:flex-start;gap:6px;line-height:1.4;font-weight:300;}
-.rank-benefits li::before{content:'◆';font-size:6px;color:var(--gold);flex-shrink:0;margin-top:5px;}
-.rank-benefits strong{color:var(--gold-2);font-weight:600;}
-.rank-cumulative-note{text-align:center;margin-top:16px;font-size:13px;color:var(--muted);background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.18);border-radius:10px;padding:12px 20px;font-weight:300;}
-.rank-cumulative-note strong{color:var(--gold-2);}
-.rank-title-exclusive{display:block;font-size:10px;color:var(--gold);font-family:'Cinzel',serif;letter-spacing:1px;margin-bottom:6px;}
-
-
-/* Top-tier special cards — warna per rank (border + isi) */
-.rank-cosmic{border:2px solid #a55eff;background:linear-gradient(160deg,rgba(46,26,80,.8),rgba(18,12,30,.85));box-shadow:0 0 20px rgba(165,94,255,.25),inset 0 0 30px rgba(165,94,255,.12);}
-.rank-cosmic::before{background:linear-gradient(135deg,rgba(192,123,255,.22),transparent 60%);}
-.rank-cosmic:hover{box-shadow:0 0 38px rgba(165,94,255,.5),inset 0 0 34px rgba(165,94,255,.16);}
-.rank-cosmic .rank-name{color:#c07bff;text-shadow:0 0 12px rgba(192,123,255,.7);}
-.rank-cosmic .rank-divider{background:linear-gradient(90deg,transparent,rgba(192,123,255,.55),transparent);}
-.rank-cosmic .rank-benefits li::before{color:#c07bff;}
-.rank-cosmic .rank-price{text-shadow:0 0 14px rgba(165,94,255,.45);}
-
-.rank-celestial{border:2px solid #ff9a3c;background:linear-gradient(160deg,rgba(74,42,10,.8),rgba(26,16,6,.85));box-shadow:0 0 20px rgba(255,154,60,.25),inset 0 0 30px rgba(255,154,60,.12);}
-.rank-celestial::before{background:linear-gradient(135deg,rgba(255,154,60,.22),transparent 60%);}
-.rank-celestial:hover{box-shadow:0 0 38px rgba(255,154,60,.5),inset 0 0 34px rgba(255,154,60,.16);}
-.rank-celestial .rank-name{color:#ff9a3c;text-shadow:0 0 12px rgba(255,154,60,.7);}
-.rank-celestial .rank-divider{background:linear-gradient(90deg,transparent,rgba(255,154,60,.55),transparent);}
-.rank-celestial .rank-benefits li::before{color:#ff9a3c;}
-.rank-celestial .rank-price{text-shadow:0 0 14px rgba(255,154,60,.45);}
-
-.rank-quasar{border:2px solid #ffffff;background:linear-gradient(160deg,rgba(70,70,78,.8),rgba(22,22,26,.85));box-shadow:0 0 20px rgba(255,255,255,.28),inset 0 0 30px rgba(255,255,255,.12);}
-.rank-quasar::before{background:linear-gradient(135deg,rgba(255,255,255,.22),transparent 60%);}
-.rank-quasar:hover{box-shadow:0 0 40px rgba(255,255,255,.55),inset 0 0 34px rgba(255,255,255,.16);}
-.rank-quasar .rank-name{color:#ffffff;text-shadow:0 0 14px rgba(255,255,255,.9);}
-.rank-quasar .rank-divider{background:linear-gradient(90deg,transparent,rgba(255,255,255,.6),transparent);}
-.rank-quasar .rank-benefits li::before{color:#ffffff;}
-.rank-quasar .rank-price{text-shadow:0 0 14px rgba(255,255,255,.5);}
-
-.rank-empyrean{border:2px solid #ff2d55;background:linear-gradient(160deg,rgba(80,10,26,.8),rgba(28,6,12,.85));box-shadow:0 0 22px rgba(255,45,85,.4),inset 0 0 32px rgba(255,45,85,.14);animation:emp-glow 2.2s ease-in-out infinite;}
-.rank-empyrean::before{background:linear-gradient(135deg,rgba(255,45,85,.24),transparent 60%);}
-.rank-empyrean:hover{box-shadow:0 0 46px rgba(255,45,85,.65),inset 0 0 36px rgba(255,45,85,.2);}
-.rank-empyrean .rank-name{color:#ff2d55;text-shadow:0 0 12px rgba(255,45,85,.95),0 0 28px rgba(255,45,85,.55);}
-.rank-empyrean .rank-divider{background:linear-gradient(90deg,transparent,rgba(255,45,85,.6),transparent);}
-.rank-empyrean .rank-benefits li::before{color:#ff2d55;}
-.rank-empyrean .rank-price{text-shadow:0 0 14px rgba(255,45,85,.5);}
-@keyframes emp-glow{0%,100%{box-shadow:0 0 22px rgba(255,45,85,.4),inset 0 0 32px rgba(255,45,85,.14);}50%{box-shadow:0 0 38px rgba(255,45,85,.65),inset 0 0 38px rgba(255,45,85,.22);}}
-@keyframes gold-shift{0%,100%{background-position:0% 0%,0% 50%;}50%{background-position:0% 0%,100% 50%;}}
-
-/* TABLES */
-.benefit-table-wrap,.kit-table-wrap,.enchant-table-wrap{overflow-x:auto;border-radius:14px;border:1px solid var(--card-border);}
-.kit-table-wrap,.enchant-table-wrap{margin-bottom:32px;}
-table.bt,table.kt{width:100%;border-collapse:collapse;font-size:11px;}
-.bt th,.kt th{background:rgba(22,18,10,.95);padding:10px 8px;text-align:center;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;color:var(--muted);border-bottom:1px solid var(--card-border);white-space:nowrap;}
-.bt th:first-child,.kt th:first-child{text-align:left;}
-.bt td,.kt td{padding:8px;text-align:center;border-bottom:1px solid rgba(212,175,55,.08);color:rgba(230,220,190,.8);font-size:11px;}
-.bt td:first-child,.kt td:first-child{text-align:left;font-weight:600;color:var(--white);}
-.bt tr:last-child td,.kt tr:last-child td{border-bottom:none;}
-.bt tr:hover td,.kt tr:hover td{background:rgba(212,175,55,.05);}
-.check{color:#ffd76a;} .dash{color:rgba(255,255,255,.15);}
-.kt-legend th:nth-child(n+2){color:var(--gold-2);}
-
-/* ABILITY */
-.ability-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;}
-.ability-card{background:var(--card);border:1px solid var(--card-border);border-radius:12px;padding:14px 16px 42px;position:relative;overflow:hidden;}
-.ability-card:hover{border-color:rgba(212,175,55,.5);}
-.ability-name{font-weight:600;color:var(--white);font-size:14px;margin-bottom:4px;}
-.ability-desc{font-size:12px;color:var(--muted);line-height:1.4;margin-bottom:10px;font-weight:300;}
-.ability-price{font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--gold-2);margin-top:8px;}
-.ability-note{font-size:10px;color:var(--muted);font-weight:400;font-family:'Jost',sans-serif;display:block;opacity:.8;}
-
-/* KIT */
-.kit-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;}
-.kit-card{background:var(--card);border:1px solid var(--card-border);border-radius:14px;padding:22px 22px 42px;position:relative;overflow:hidden;}
-.kit-card:hover{border-color:rgba(212,175,55,.5);}
-.kit-tier{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
-.kit-dot{width:12px;height:12px;border-radius:50%;flex-shrink:0;}
-.dot-basic{background:#8f9a6a;}.dot-epic{background:#d4af37;}.dot-legendary{background:#c07a2a;}
-.dot-aqua{background:#7ab8a8;}.dot-mythic{background:#c05a4a;}.dot-secret{background:#a87ac0;}
-.dot-brainrot{background:linear-gradient(135deg,#f0d878,#d4af37,#8a6d1f);}
-.kit-name{font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--white);}
-.kit-content{font-size:12px;color:rgba(230,220,190,.7);line-height:1.6;margin-bottom:14px;font-weight:300;}
-.kit-price{display:inline-block;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.35);border-radius:8px;padding:6px 14px;font-family:'Cinzel',serif;font-size:14px;font-weight:700;color:var(--gold-2);}
-.kit-enchants{font-size:10px;color:rgba(240,216,120,.8);margin-top:6px;line-height:1.5;}
-.kit-item-list{font-size:11px;color:rgba(230,220,190,.75);line-height:1.7;margin-bottom:10px;font-weight:300;}
-.kit-item-list li{margin-bottom:2px;list-style:none;display:flex;align-items:flex-start;gap:6px;}
-.kit-item-list li::before{content:'▸';color:var(--gold);font-size:10px;flex-shrink:0;margin-top:1px;}
-.kit-mythic-card{border-color:rgba(192,90,74,.5);}
-.kit-mythic-card .kit-name{color:#e08a7a;}
-.kit-secret-card{border-color:rgba(168,122,192,.5);}
-.kit-secret-card .kit-name{color:#cfaae0;}
-.kit-brainrot-card{border:2px solid transparent;background:linear-gradient(160deg,rgba(30,25,14,.8),rgba(16,13,8,.8)) padding-box,linear-gradient(135deg,#f7e7a0,#d4af37,#8a6d1f) border-box;}
-.kit-brainrot-card .kit-name{background:linear-gradient(135deg,#f7e7a0,#d4af37);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.kit-tier-box{border-radius:14px;padding:22px;margin-bottom:20px;background:linear-gradient(135deg,rgba(212,175,55,.05),rgba(16,13,8,.5));border:1px solid rgba(212,175,55,.25);}
-.ktb-title{font-family:'Cinzel',serif;font-size:13px;font-weight:700;letter-spacing:1.5px;margin-bottom:6px;text-transform:uppercase;color:var(--gold-2);}
-.ktb-table{width:100%;border-collapse:collapse;font-size:11px;}
-.ktb-table th{padding:8px 10px;text-align:left;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;border-bottom:1px solid rgba(212,175,55,.2);color:var(--gold);}
-.ktb-table td{padding:6px 10px;border-bottom:1px solid rgba(255,255,255,.05);color:rgba(230,220,190,.8);font-size:11px;font-weight:300;}
-.ktb-table td:first-child{font-weight:600;color:var(--white);white-space:nowrap;}
-.ktb-table tr:last-child td{border-bottom:none;}
-
-/* SKILL (dipakai juga untuk Fly cards) */
-.skill-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-bottom:28px;}
-.skill-card{background:var(--card);border:1px solid var(--card-border);border-radius:14px;padding:20px 18px 42px;text-align:center;position:relative;overflow:hidden;}
-.skill-card:hover{border-color:rgba(212,175,55,.5);}
-.skill-icon{font-size:28px;margin-bottom:8px;display:block;}
-.skill-name{font-family:'Cinzel',serif;font-size:12px;font-weight:700;color:var(--white);margin-bottom:6px;letter-spacing:1px;}
-.skill-desc{font-size:12px;color:rgba(230,220,190,.65);line-height:1.5;margin-bottom:12px;font-weight:300;}
-.skill-price{font-family:'Cinzel',serif;font-size:15px;font-weight:700;color:var(--gold-2);}
-
-/* PARTICLE */
-.particle-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;}
-.particle-card{background:var(--card);border:1px solid var(--card-border);border-radius:14px;padding:22px 20px 42px;position:relative;overflow:hidden;}
-.particle-card:hover{border-color:rgba(212,175,55,.45);}
-.particle-icon{font-size:28px;margin-bottom:10px;display:block;}
-.particle-name{font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--white);margin-bottom:8px;}
-.particle-desc{font-size:13px;color:rgba(230,220,190,.65);line-height:1.5;margin-bottom:12px;font-weight:300;}
-.particle-price{font-family:'Cinzel',serif;font-size:17px;font-weight:700;color:var(--gold-2);}
-.particle-effects-box{background:var(--card);border:1px solid var(--card-border);border-radius:14px;padding:22px 24px;margin-bottom:32px;}
-.particle-effects-box .peb-title{font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--gold-2);letter-spacing:1.5px;margin-bottom:12px;text-transform:uppercase;}
-.peb-grid{display:flex;flex-wrap:wrap;gap:8px;}
-.peb-tag{display:inline-block;background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.2);border-radius:20px;padding:5px 14px;font-size:12px;color:rgba(230,220,190,.85);font-weight:400;}
-.peb-tag:hover{background:rgba(212,175,55,.16);border-color:rgba(212,175,55,.5);}
-.peb-note{font-size:12px;color:var(--muted);margin-top:12px;line-height:1.5;font-weight:300;}
-
-/* AKSESORIS */
-.aksesori-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;}
-.aksesori-card{background:rgba(15,12,7,.5);border:1px dashed rgba(212,175,55,.25);border-radius:14px;padding:28px 20px;text-align:center;opacity:.6;}
-.aksesori-icon{font-size:32px;margin-bottom:12px;display:block;filter:grayscale(.4) sepia(.4);}
-.aksesori-name{font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--muted);margin-bottom:8px;}
-.aksesori-desc{font-size:13px;color:rgba(154,143,116,.7);line-height:1.5;margin-bottom:14px;font-weight:300;}
-.cs-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.2);border-radius:20px;padding:5px 14px;font-size:11px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;font-family:'Cinzel',serif;}
-
-/* MISC */
-.misc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px;}
-.misc-card{background:var(--card);border:1px solid var(--card-border);border-radius:14px;padding:26px 22px 42px;text-align:center;position:relative;overflow:hidden;}
-.misc-card:hover{border-color:rgba(212,175,55,.5);}
-.misc-icon{font-size:34px;margin-bottom:12px;display:block;}
-.misc-title{font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--white);margin-bottom:8px;letter-spacing:1px;}
-.misc-desc{font-size:13px;color:var(--muted);margin-bottom:12px;line-height:1.5;font-weight:300;}
-.misc-price{font-family:'Cinzel',serif;font-size:17px;font-weight:700;color:var(--gold-2);}
-
-footer{border-top:1px solid rgba(212,175,55,.2);padding:40px 0;text-align:center;color:var(--muted);font-size:14px;line-height:1.8;font-weight:300;}
-footer strong{color:var(--gold-2);}
-
-@keyframes pulse-glow{0%,100%{text-shadow:0 0 20px rgba(212,175,55,.35);}50%{text-shadow:0 0 44px rgba(212,175,55,.65),0 0 70px rgba(184,134,11,.3);}}
-.server-pane{display:none;}
-.server-pane.active{display:block;animation:fadein .4s ease;}
-@keyframes fadein{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
-@media(max-width:760px){nav .wrap{flex-direction:column;align-items:center;gap:8px;}.nav-links{justify-content:center;gap:12px;}.nav-links a{font-size:10px;}.hero-logo{width:110px;height:110px;}}
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav>
-  <div class="wrap">
-    <div class="nav-brand">
-      <img src="logo.png" alt="Logo Kita Network" class="nav-logo-img">
-      <div class="nav-logo">KITA <span>NETWORK</span></div>
+<a class="skip" href="#konten">Langsung ke katalog</a>
+
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="brand" href="#konten" aria-label="Kita Network VIP Store">
+      <span class="brand-mark"><img src="logo.png" width="44" height="44" alt="" onerror="this.parentNode.textContent='KN'"></span>
+      <span class="brand-text">
+        <span class="brand-name">Kita Network</span>
+        <span class="brand-sub">VIP Store</span>
+      </span>
+    </a>
+
+    <div class="server-switch" role="group" aria-label="Pilih server">
+      <button type="button" class="server-tab" id="tab-economy" aria-pressed="true" aria-controls="pane-economy">Economy</button>
+      <button type="button" class="server-tab" id="tab-rpg" aria-pressed="false" aria-controls="pane-rpg">RPG</button>
     </div>
-    <div class="nav-links" id="nav-links">
-      <a data-server="both" href="javascript:void(0)" onclick="goTo('rank')">Rank</a>
-      <a data-server="economy" href="javascript:void(0)" onclick="goTo('ability')">Ability</a>
-      <a data-server="economy" href="javascript:void(0)" onclick="goTo('kit')">Kit</a>
-      <a data-server="economy" href="javascript:void(0)" onclick="goTo('fly')">Fly</a>
-      <a data-server="economy" href="javascript:void(0)" onclick="goTo('partikel')">Partikel</a>
-      <a data-server="economy" href="javascript:void(0)" onclick="goTo('aksesoris')">Aksesoris</a>
-      <a data-server="economy" href="javascript:void(0)" onclick="goTo('misc')">MISC</a>
-      <a data-server="rpg" href="javascript:void(0)" onclick="goTo('currency-rpg')">Currency</a>
-    </div>
+
+    <a class="ghost header-admin" href="https://wa.me/6281270551570" target="_blank" rel="noopener">Chat admin</a>
   </div>
-</nav>
+</header>
 
-<div class="wrap">
+<main id="konten">
 
-  <!-- HERO -->
-  <div class="hero">
-    <img src="logo.png" alt="Kita Network" class="hero-logo">
-    <div class="hero-badge">✦ Official VIP Store ✦</div>
-    <h1><span class="glow">Kita Network</span></h1>
-    <p class="hero-sub">Dua dunia, satu legenda. Pilih server-mu dan tingkatkan pengalaman bermainmu dengan kemewahan VIP.</p>
-    <div class="server-switch">
-      <button class="server-btn active" id="btn-economy" onclick="setServer('economy')">💰 Economy<small>Survival Economy Server</small></button>
-      <button class="server-btn" id="btn-rpg" onclick="setServer('rpg')">⚔️ RPG<small>Adventure RPG Server</small></button>
+  <section class="hero">
+    <div class="shell hero-grid">
+      <div class="hero-lead">
+        <p class="kicker">Harga Rupiah · Pembayaran QRIS</p>
+        <h1><span class="h1-main">Kita Network</span><span class="h1-alt">VIP Store</span></h1>
+        <p class="hero-copy">Rank, kit, fly, partikel, dan currency untuk dua server. Pilih item, isi gamertag, bayar lewat QRIS, lalu kirim bukti ke admin.</p>
+
+        <div class="buyer-status">
+          <span class="bs-label">Data pembeli</span>
+          <span class="bs-value" id="buyer-value" aria-live="polite">Belum diisi</span>
+          <button type="button" class="link-btn" id="edit-buyer">Isi data</button>
+        </div>
+
+        <p class="hero-admin">Ada pertanyaan sebelum beli? <a href="https://wa.me/6281270551570" target="_blank" rel="noopener">Chat admin</a>.</p>
+      </div>
+
+      <aside class="server-note" aria-label="Server yang sedang dibuka">
+        <p class="note-label">Server aktif</p>
+        <p class="note-name" id="server-note-name">Economy</p>
+        <p class="note-desc" id="server-note-desc">Survival Economy Server</p>
+        <ul class="note-cats" id="server-note-cats">
+          <li>Rank</li><li>Ability</li><li>Kit</li><li>Fly</li><li>Partikel</li><li>Aksesoris</li><li>MISC</li>
+        </ul>
+      </aside>
     </div>
-    <div style="margin-top:26px;">
-      <a class="wa-btn" href="https://wa.me/6281270551570" target="_blank">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a9.99 9.99 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.135.561 4.14 1.543 5.874L.057 23.272a.75.75 0 00.913.914l5.488-1.485A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.92 0-3.72-.504-5.27-1.385l-.374-.215-3.887 1.052 1.053-3.795-.232-.385A9.955 9.955 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-        Hubungi Admin
-      </a>
+
+    <div class="shell">
+      <ol class="steps">
+        <li><span class="step-n">1</span><p>Pilih server, lalu pilih item di katalog.</p></li>
+        <li><span class="step-n">2</span><p>Klik Beli, isi nama atau gamertag dan tipe Minecraft.</p></li>
+        <li><span class="step-n">3</span><p>Buka gambar QRIS, bayar sesuai harga, simpan bukti.</p></li>
+        <li><span class="step-n">4</span><p>Kirim pesan ke admin. Item, harga, gamertag, dan tipe sudah terisi otomatis.</p></li>
+      </ol>
     </div>
-    <div class="hero-divider"></div>
+  </section>
+
+  <!-- ================= SERVER ECONOMY ================= -->
+  <div class="server-pane" id="pane-economy">
+    <nav class="index-bar shell" aria-label="Kategori Economy">
+      <a href="#rank">Rank</a>
+      <a href="#banding">Perbandingan</a>
+      <a href="#ability">Ability</a>
+      <a href="#kit">Kit</a>
+      <a href="#fly">Fly</a>
+      <a href="#partikel">Partikel</a>
+      <a href="#aksesoris">Aksesoris</a>
+      <a href="#misc">MISC</a>
+    </nav>
+
+    <section class="section" id="rank">
+      <div class="shell">
+        <div class="sec-head">
+          <span class="sec-index">01</span>
+          <div>
+            <h2>Rank Economy</h2>
+            <p class="sec-note">Semua rank sudah termasuk Title Exclusive, berlaku permanen, dan tetap ada di season selanjutnya.</p>
+          </div>
+        </div>
+
+        <h3 class="group-head">Rank inti <span>Nova sampai Gargantua</span></h3>
+        <div id="eco-rank-core"></div>
+
+        <h3 class="group-head">Rank puncak <span>Cosmic sampai Empyrean</span></h3>
+        <div id="eco-rank-peak"></div>
+      </div>
+    </section>
+
+    <section class="section" id="banding">
+      <div class="shell">
+        <div class="sec-head">
+          <span class="sec-index">02</span>
+          <div>
+            <h2>Perbandingan benefit</h2>
+            <p class="sec-note">Angka di tabel sama dengan isi tiap rank di atas. Geser ke samping untuk melihat semua rank.</p>
+          </div>
+        </div>
+        <div class="table-scroll">
+          <table class="cmp">
+            <caption>Benefit rank Economy per rank</caption>
+            <thead>
+              <tr>
+                <th scope="col">Benefit</th>
+                <th scope="col">Nova</th>
+                <th scope="col">Lunar</th>
+                <th scope="col">Astra</th>
+                <th scope="col">Solar</th>
+                <th scope="col">Athena</th>
+                <th scope="col">Stellar</th>
+                <th scope="col">Nexus</th>
+                <th scope="col">Nebula</th>
+                <th scope="col">Gargantua</th>
+                <th scope="col">Cosmic</th>
+                <th scope="col">Celestial</th>
+                <th scope="col">Quasar</th>
+                <th scope="col">Empyrean</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">❤️ Tambahan Hati</th><td>+2</td><td>+5</td><td>+7</td><td>+10</td><td>+15</td><td>+20</td><td>+25</td><td>+30</td><td>+35</td><td>+40</td><td>+50</td><td>+60</td><td>+70</td></tr>
+              <tr><th scope="row">🏠 /sethome</th><td>11</td><td>12</td><td>15</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td><td>90</td><td>90</td><td>90</td></tr>
+              <tr><th scope="row">💰 Sell Bonus</th><td class="dash">·</td><td>+20%</td><td>+30%</td><td>+40%</td><td>+40%</td><td>+50%</td><td>+50%</td><td>+60%</td><td>+65%</td><td>+70%</td><td>+80%</td><td>+90%</td><td>+120%</td></tr>
+              <tr><th scope="row">📈 Skill Multiplier</th><td class="dash">·</td><td>+20%</td><td>+30%</td><td>+40%</td><td>+40%</td><td>+50%</td><td>+50%</td><td>+60%</td><td>+65%</td><td>+70%</td><td>+80%</td><td>+90%</td><td>+120%</td></tr>
+              <tr><th scope="row">🎯 Free Skill</th><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td>1</td><td>1</td><td>2</td><td>2</td><td>3</td><td>4</td><td>4</td><td>4</td></tr>
+              <tr><th scope="row">✈️ Fly</th><td class="dash">·</td><td class="dash">·</td><td>v1</td><td>v1</td><td>v1</td><td>v2</td><td>v2</td><td>v2</td><td>v2</td><td>v3</td><td>v3</td><td>v3</td><td>v3</td></tr>
+              <tr><th scope="row">🎒 Backpack</th><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td>3 Slot</td><td>5 Slot</td><td>8 Slot</td><td>10 Slot</td><td>15 Slot</td><td>20 Slot</td><td>30 Slot</td><td>50 Slot</td></tr>
+              <tr><th scope="row">📱 Portable Commands</th><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td>2</td><td>3</td><td>4</td><td>5</td><td>5</td><td>5</td><td>5</td><td>5</td><td>5</td></tr>
+              <tr><th scope="row">💊 /heal &amp; /feed</th><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
+              <tr><th scope="row">🔧 /repair</th><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
+              <tr><th scope="row">✏️ /nick, /ptime, /pweather</th><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
+              <tr><th scope="row">✨ Bebas Pilih Partikel</th><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td>1</td><td>2</td><td>3</td></tr>
+              <tr><th scope="row">🎁 Claim Kit Bebas</th><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td>1</td><td>1</td><td>1</td></tr>
+              <tr><th scope="row">🎁 Daily Reward Tier</th><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>3</td><td>3</td><td>3</td><td>4</td><td>4</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ability">
+      <div class="shell">
+        <div class="sec-head">
+          <span class="sec-index">03</span>
+          <div>
+            <h2>Ability</h2>
+            <p class="sec-note">Ability tambahan di luar bawaan rank. Bisa dibeli berkali-kali dan efeknya menumpuk.</p>
+          </div>
+        </div>
+        <div class="board" id="eco-ability-grid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="kit">
+      <div class="shell">
+        <div class="sec-head">
+          <span class="sec-index">04</span>
+          <div>
+            <h2>Kit</h2>
+            <p class="sec-note">Setiap kit hanya bisa diambil 1x (One Time Claim).</p>
+          </div>
+        </div>
+        <div class="kit-grid" id="eco-kit-grid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="fly">
+      <div class="shell">
+        <div class="sec-head">
+          <span class="sec-index">05</span>
+          <div>
+            <h2>Fly</h2>
+            <p class="sec-note">Tiga varian terbang dengan cara kerja berbeda. Semua berlaku permanen.</p>
+          </div>
+        </div>
+        <div class="table-scroll">
+          <table class="fly">
+            <caption class="sr-only">Perbandingan Fly v1, Fly v2, dan Fly v3</caption>
+            <thead>
+              <tr><th scope="col">Varian</th><th scope="col">Cara kerja</th><th scope="col" class="col-price">Harga</th><th scope="col" class="col-act"><span class="sr-only">Beli</span></th></tr>
+            </thead>
+            <tbody id="eco-fly-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="partikel">
+      <div class="shell">
+        <div class="sec-head">
+          <span class="sec-index">06</span>
+          <div>
+            <h2>Partikel</h2>
+            <p class="sec-note">Style partikel dibeli per tampilan dan berlaku permanen. Efek di bawah bisa dipilih sendiri setelah membeli.</p>
+          </div>
+        </div>
+
+        <details class="effects">
+          <summary><span>Lihat <span id="peb-count">semua</span> efek partikel yang bisa dipilih</span></summary>
+          <div class="effects-body">
+            <div class="effects-grid" id="peb-grid"></div>
+            <p class="effects-note">Beberapa efek bisa dikombinasikan dengan warna custom. Tanyakan admin untuk melihat preview langsung di server.</p>
+          </div>
+        </details>
+
+        <h3 class="group-head">Standar <span>Rp 15.000 sampai Rp 50.000</span></h3>
+        <div class="entry-list" id="particle-standar"></div>
+
+        <h3 class="group-head">Premium <span>Rp 60.000 sampai Rp 100.000</span></h3>
+        <div class="entry-list" id="particle-premium"></div>
+
+        <h3 class="group-head">Sultan <span>Rp 100.000</span></h3>
+        <div class="entry-list" id="particle-sultan"></div>
+      </div>
+    </section>
+
+    <section class="section" id="aksesoris">
+      <div class="shell">
+        <div class="sec-head">
+          <span class="sec-index">07</span>
+          <div>
+            <h2>Aksesoris</h2>
+            <p class="sec-note">Item kosmetik ini belum dijual. Halaman akan diperbarui kalau sudah siap.</p>
+          </div>
+        </div>
+        <div class="soon" id="aksesoris-list"></div>
+      </div>
+    </section>
+
+    <section class="section" id="misc">
+      <div class="shell">
+        <div class="sec-head">
+          <span class="sec-index">08</span>
+          <div>
+            <h2>MISC</h2>
+            <p class="sec-note">Item dan layanan tambahan untuk server Economy.</p>
+          </div>
+        </div>
+        <div class="entry-list" id="eco-misc-list"></div>
+      </div>
+    </section>
   </div>
 
-<!-- ============ ECONOMY SERVER ============ -->
-<div class="server-pane active" id="pane-economy">
+  <!-- ================= SERVER RPG ================= -->
+  <div class="server-pane" id="pane-rpg" hidden>
+    <nav class="index-bar shell" aria-label="Kategori RPG">
+      <a href="#rank-rpg">Rank</a>
+      <a href="#banding-rpg">Perbandingan</a>
+      <a href="#currency-rpg">Currency</a>
+    </nav>
 
-  <!-- RANK -->
-  <section id="rank">
-    <div class="section-header">
-      <span class="section-label">✦ Prestige</span>
-      <div class="section-title">Sistem Rank — Economy</div>
-      <div class="section-desc">Pilih rank yang sesuai dan tingkatkan pengalamanmu di Kita Network Economy.</div>
-    </div>
-    <div class="rank-grid" id="eco-rank-grid"></div>
-    <div class="rank-cumulative-note">
-      💡 <strong>Info:</strong> Semua rank dilengkapi <strong>Title Exclusive</strong> otomatis. Rank bersifat <strong>permanen</strong> dan tetap ada di <strong>season selanjutnya</strong>.
-    </div>
-  </section>
+    <section class="section" id="rank-rpg">
+      <div class="shell">
+        <div class="sec-head">
+          <span class="sec-index">01</span>
+          <div>
+            <h2>Rank RPG</h2>
+            <p class="sec-note">Harga sudah termasuk diskon 20%. Rank berlaku permanen dan tetap ada di season selanjutnya.</p>
+          </div>
+        </div>
 
-  <!-- BENEFIT TABLE -->
-  <section>
-    <div class="section-header">
-      <span class="section-label">✦ Overview</span>
-      <div class="section-title">Perbandingan Benefit Rank</div>
-    </div>
-    <div class="benefit-table-wrap">
-      <table class="bt">
-        <thead><tr><th>Benefit</th><th>Nova</th><th>Lunar</th><th>Astra</th><th>Solar</th><th>Athena</th><th>Stellar</th><th>Nexus</th><th>Nebula</th><th>Gargantua</th><th>Cosmic</th><th>Celestial</th><th>Quasar</th><th>Empyrean</th></tr></thead>
-        <tbody>
-          <tr><td>❤️ Tambahan Hati</td><td>+2</td><td>+5</td><td>+7</td><td>+10</td><td>+15</td><td>+20</td><td>+25</td><td>+30</td><td>+35</td><td>+40</td><td>+50</td><td>+60</td><td>+70</td></tr>
-          <tr><td>🏠 /sethome</td><td>11</td><td>12</td><td>15</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td><td>90</td><td>90</td><td>90</td></tr>
-          <tr><td>💰 Sell Bonus</td><td class="dash">—</td><td>+20%</td><td>+30%</td><td>+40%</td><td>+40%</td><td>+50%</td><td>+50%</td><td>+60%</td><td>+65%</td><td>+70%</td><td>+80%</td><td>+90%</td><td>+120%</td></tr>
-          <tr><td>📈 Skill Multiplier</td><td class="dash">—</td><td>+20%</td><td>+30%</td><td>+40%</td><td>+40%</td><td>+50%</td><td>+50%</td><td>+60%</td><td>+65%</td><td>+70%</td><td>+80%</td><td>+90%</td><td>+120%</td></tr>
-          <tr><td>🎯 Free Skill</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td>1</td><td>1</td><td>2</td><td>2</td><td>3</td><td>4</td><td>4</td><td>4</td></tr>
-          <tr><td>✈️ Fly</td><td class="dash">—</td><td class="dash">—</td><td>v1</td><td>v1</td><td>v1</td><td>v2</td><td>v2</td><td>v2</td><td>v2</td><td>v3</td><td>v3</td><td>v3</td><td>v3</td></tr>
-          <tr><td>🎒 Backpack</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td>3 Slot</td><td>5 Slot</td><td>8 Slot</td><td>10 Slot</td><td>15 Slot</td><td>20 Slot</td><td>30 Slot</td><td>50 Slot</td></tr>
-          <tr><td>📱 Portable Commands</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td>2</td><td>3</td><td>4</td><td>5</td><td>5</td><td>5</td><td>5</td><td>5</td><td>5</td></tr>
-          <tr><td>💊 /heal & /feed</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-          <tr><td>🔧 /repair</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-          <tr><td>✏️ /nick, /ptime, /pweather</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-          <tr><td>✨ Bebas Pilih Partikel</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td>1</td><td>2</td><td>3</td></tr>
-          <tr><td>🎁 Claim Kit Bebas</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td>1</td><td>1</td><td>1</td></tr>
-          <tr><td>🎁 Daily Reward Tier</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>3</td><td>3</td><td>3</td><td>4</td><td>4</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
+        <h3 class="group-head">Rank inti <span>Nova sampai Gargantua</span></h3>
+        <div id="rpg-rank-core"></div>
 
-  <!-- ABILITY -->
-  <section id="ability">
-    <div class="section-header">
-      <span class="section-label">✦ Premium</span>
-      <div class="section-title">VIP Ability</div>
-      <div class="section-desc">Beli ability tambahan di luar bawaan rank. Bisa di-stack dan dibeli berkali-kali!</div>
-    </div>
-    <div class="ability-grid" id="eco-ability-grid"></div>
-  </section>
-
-  <!-- KIT -->
-  <section id="kit">
-    <div class="section-header">
-      <span class="section-label">✦ Equipment</span>
-      <div class="section-title">VIP Kit</div>
-      <div class="section-desc">Kit eksklusif pilihanmu — armor, tools, dan senjata OP siap tempur.<br><strong style="color:#ff9070;">⚠️ Setiap kit hanya bisa diambil 1x (One Time Claim).</strong></div>
-    </div>
-
-    <span class="sub-label">— Pilihan Kit</span>
-    <div class="kit-grid" id="eco-kit-grid"></div>
-
-  </section>
-
-  <!-- FLY -->
-  <section id="fly">
-    <div class="section-header">
-      <span class="section-label">✦ Movement</span>
-      <div class="section-title">Fly</div>
-      <div class="section-desc">Kemampuan terbang eksklusif dengan 3 varian sesuai kebutuhanmu di server.</div>
-    </div>
-    <div class="skill-grid">
-      <a class="buyable" href="https://wa.me/6281270551570?text=Halo%2Badmin%2C%2Bsaya%2Bmau%2Bbeli%2BFly%2BV1%2BRp%2B20.000%0AGamertag%3A%20%0ATipe%20Minecraft%20%28Java/Bedrock%29%3A%20%0A%0AQRIS%3A%20https%3A//www.image2url.com/r2/default/images/1782458859060-3c93a54a-a932-4b97-861e-25e7d62e0a08.jpg" target="_blank">
-        <div class="skill-card buyable-card">
-          <span class="label-badge label-permanent">PERMANENT</span>
-          <span class="skill-icon">🌀</span><div class="skill-name">Fly v1</div>
-          <div class="skill-desc">Memberikan efek levitasi seperti terkena serangan Shulker — melayang di udara sesaat. Bisa diatur durasi & ketinggiannya sesuai keinginan.</div>
-          <div class="skill-price">Rp 20.000</div>
-          <div class="buy-tag">Beli →</div>
-        </div>
-      </a>
-      <a class="buyable" href="https://wa.me/6281270551570?text=Halo%2Badmin%2C%2Bsaya%2Bmau%2Bbeli%2BFly%2BV2%2BRp%2B60.000%0AGamertag%3A%20%0ATipe%20Minecraft%20%28Java/Bedrock%29%3A%20%0A%0AQRIS%3A%20https%3A//www.image2url.com/r2/default/images/1782458859060-3c93a54a-a932-4b97-861e-25e7d62e0a08.jpg" target="_blank">
-        <div class="skill-card buyable-card">
-          <span class="label-badge label-permanent">PERMANENT</span>
-          <span class="skill-icon">🎈</span><div class="skill-name">Fly v2</div>
-          <div class="skill-desc">Terbang seperti lift udara yang naik turun perlahan. Kontrol stabil dan nyaman, sangat cocok untuk keperluan building dan konstruksi besar.</div>
-          <div class="skill-price">Rp 60.000</div>
-          <div class="buy-tag">Beli →</div>
-        </div>
-      </a>
-      <a class="buyable" href="https://wa.me/6281270551570?text=Halo%2Badmin%2C%2Bsaya%2Bmau%2Bbeli%2BFly%2BV3%2BRp%2B150.000%0AGamertag%3A%20%0ATipe%20Minecraft%20%28Java/Bedrock%29%3A%20%0A%0AQRIS%3A%20https%3A//www.image2url.com/r2/default/images/1782458859060-3c93a54a-a932-4b97-861e-25e7d62e0a08.jpg" target="_blank">
-        <div class="skill-card buyable-card">
-          <span class="label-badge label-permanent">PERMANENT</span>
-          <span class="skill-icon">✈️</span><div class="skill-name">Fly v3</div>
-          <div class="skill-desc">Terbebas dari gravitasi sepenuhnya seperti mode kreatif. Gerak bebas ke segala arah dengan kecepatan penuh — pengalaman terbang tanpa batas.</div>
-          <div class="skill-price">Rp 150.000</div>
-          <div class="buy-tag">Beli →</div>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <!-- PARTIKEL -->
-  <section id="partikel">
-    <div class="section-header">
-      <span class="section-label">✦ Cosmetic</span>
-      <div class="section-title">Partikel</div>
-      <div class="section-desc">Tampil beda dengan efek partikel eksklusif yang terlihat oleh semua player di sekitarmu. Dibagi dalam 3 kelas: Standar, Premium, dan Sultan.</div>
-    </div>
-    <div class="particle-effects-box">
-      <div class="peb-title">✦ Pilihan Efek Partikel</div>
-      <div class="peb-grid" id="peb-grid"></div>
-      <div class="peb-note">Kamu bebas memilih efek di atas untuk dipasangkan dengan style partikel yang dibeli. Beberapa efek bisa dikombinasikan dengan warna custom. Tanyakan admin untuk melihat preview langsung di server!</div>
-    </div>
-
-    <span class="sub-label">— Standar (15k – 50k)</span>
-    <div class="particle-grid">
-      <a class="buyable" href="https://wa.me/6281270551570?text=Halo%2Badmin%2C%2Bsaya%2Bmau%2Bbeli%2BPartikel%2BNormal%2BRp%2B50.000%0AGamertag%3A%20%0ATipe%20Minecraft%20%28Java/Bedrock%29%3A%20%0A%0AQRIS%3A%20https%3A//www.image2url.com/r2/default/images/1782458859060-3c93a54a-a932-4b97-861e-25e7d62e0a08.jpg" target="_blank">
-        <div class="particle-card buyable-card"><span class="label-badge label-permanent">PERMANENT</span>
-          <span class="particle-icon">✨</span><div class="particle-name">Normal</div>
-          <div class="particle-desc">Partikel selalu aktif di sekitar tubuh.</div>
-          <div class="particle-price">Rp 50.000</div><div class="buy-tag">Beli →</div>
-        </div>
-      </a>
-      <a class="buyable" href="https://wa.me/6281270551570?text=Halo%2Badmin%2C%2Bsaya%2Bmau%2Bbeli%2BPartikel%2BFeet%2BRp%2B25.000%0AGamertag%3A%20%0ATipe%20Minecraft%20%28Java/Bedrock%29%3A%20%0A%0AQRIS%3A%20https%3A//www.image2url.com/r2/default/images/1782458859060-3c93a54a-a932-4b97-861e-25e7d62e0a08.jpg" target="_blank">
-        <div class="particle-card buyable-card"><span class="label-badge label-permanent">PERMANENT</span>
-          <span class="particle-icon">🦶</span><div class="particle-name">Feet</div>
-          <div class="particle-desc">Particle muncul di kaki setiap langkah. Subtle tapi estetik — terlihat natural saat berjalan di tanah, pasir, atau salju.</div>
-          <div class="particle-price">Rp 25.000</div><div class="buy-tag">Beli →</div>
-        </div>
-      </a>
-      <a class="buyable" href="https://wa.me/6281270551570?text=Halo%2Badmin%2C%2Bsaya%2Bmau%2Bbeli%2BPartikel%2BMove%2BRp%2B30.000%0AGamertag%3A%20%0ATipe%20Minecraft%20%28Java/Bedrock%29%3A%20%0A%0AQRIS%3A%20https%3A//www.image2url.com/r2/default/images/1782458859060-3c93a54a-a932-4b97-861e-25e7d62e0a08.jpg" target="_blank">
-        <div class="particle-card buyable-card"><span class="label-badge label-permanent">PERMANENT</span>
-          <span class="particle-icon">👣</span><div class="particle-name">Move</div>
-          <div class="particle-desc">Jejak elegan yang mengikuti setiap langkah pergerakanmu. Tampak sederhana, namun meninggalkan kesan yang tak terlupakan di setiap sudut server.</div>
-          <div class="particle-price">Rp 30.000</div><div class="buy-tag">Beli →</div>
-        </div>
-      </a>
-      <a class="buyable" href="https://wa.me/6281270551570?text=Halo%2Badmin%2C%2Bsaya%2Bmau%2Bbeli%2BPartikel%2BTrail%2BRp%2B40.000%0AGamertag%3A%20%0ATipe%20Minecraft%20%28Java/Bedrock%29%3A%20%0A%0AQRIS%3A%20https%3A//www.image2url.com/r2/default/images/1782458859060-3c93a54a-a932-4b97-861e-25e7d62e0a08.jpg" target="_blank">
-        <div class="particle-card buyable-card"><span class="label-badge label-permanent">PERMANENT</span>
-          <span class="particle-icon">💨</span><div class="particle-name">Trail</div>
-          <div class="particle-desc">Jejak panjang di belakang player saat berlari. Lebih panjang dan dramatis dari Move — cocok untuk show-off saat PvP atau parkour.</div>
-          <div class="particle-price">Rp 40.000</div><div class="buy-tag">Beli →</div>
-        </div>
-      </a>
-    </div>
-
-    <span class="sub-label">— Premium (60k – 100k)</span>
-    <div class="particle-grid">
-      <a class="buyable" href="https://wa.me/6281270551570?text=Halo%2Badmin%2C%2Bsaya%2Bmau%2Bbeli%2BPartikel%2BHalo%2BRp%2B60.000%0AGamertag%3A%20%0ATipe%20Minecraft%20%28Java/Bedrock%29%3A%20%0A%0AQRIS%3A%20https%3A//www.image2url.com/r2/default/images/1782458859060-3c93a54a-a932-4b97-861e-25e7d62e0a08.jpg" target="_blank">
-        <div class="particle-card buyable-card"><span class="label-badge label-permanent">PERMANENT</span>
-          <span class="particle-icon">😇</span><div class="particle-name">Halo</div>
-          <div class="particle-desc">Lingkaran particle di atas kepala seperti malaikat. Terlihat jelas dari jauh dan memberi kesan suci / elite di tengah keramaian.</div>
-          <div class="particle-price">Rp 60.000</div><div class="buy-tag">Beli →</div>
-        </div>
-      </a>
-      <a class="buyable" href="https://wa.me/6281270551570?text=Halo%2Badmin%2C%2Bsaya%2Bmau%2Bbeli%2BPartikel%2BOverhead%2BRp%2B65.000%0AGamertag%3A%20%0ATipe%20Minecraft%20%28Java/Bedrock%29%3A%20%0A%0AQRIS%3A%20https%3A//www.image2url.com/r2/default/images/1782458859060-3c93a54a-a932-4b97-861e-25e7d62e0a08.jpg" target="_blank">
-        <div class="particle-card buyable-card"><span class="label-badge label-permanent">PERMANENT</span>
-          <span class="particle-icon">👑</span><div class="particle-name">Overhead</div>
-          <div class="particle-desc">Particle muncul di atas kepala seperti mahkota. Efek statis yang elegan — tidak bergerak tapi selalu terlihat oleh player di sekitar.</div>
-          <div class="particle-price">Rp 65.000</div><div class="buy-tag">Beli →</div>
-        </div>
-      </a>
-      <a class="buyable" href="https://wa.me/6281270551570?text=Halo%2Badmin%2C%2Bsaya%2Bmau%2Bbeli%2BPartikel%2BOrbit%2BRp%2B70.000%0AGamertag%3A%20%0ATipe%20Minecraft%20%28Java/Bedrock%29%3A%20%0A%0AQRIS%3A%20https%3A//www.image2url.com/r2/default/images/1782458859060-3c93a54a-a932-4b97-861e-25e7d62e0a08.jpg" target="_blank">
-        <div class="particle-card buyable-card"><span class="label-badge label-permanent">PERMANENT</span>
-          <span class="particle-icon">🪐</span><div class="particle-name">Orbit</div>
-          <div class="particle-desc">Particle berputar mengelilingi badan seperti planet. Eye-catching dan dinamis — pilihan terbaik untuk tier menengah yang ingin mencolok.</div>
-          <div class="particle-price">Rp 70.000</div><div class="buy-tag">Beli →</div>
-        </div>
-      </a>
-      <a class="buyable" href="https://wa.me/6281270551570?text=Halo%2Badmin%2C%2Bsaya%2Bmau%2Bbeli%2BPartikel%2BSpin%2BRp%2B75.000%0AGamertag%3A%20%0ATipe%20Minecraft%20%28Java/Bedrock%29%3A%20%0A%0AQRIS%3A%20https%3A//www.image2url.com/r2/default/images/1782458859060-3c93a54a-a932-4b97-861e-25e7d62e0a08.jpg" target="_blank">
-        <div class="particle-card buyable-card"><span class="label-badge label-permanent">PERMANENT</span>
-          <span class="particle-icon">🔄</span><div class="particle-name">Spin</div>
-          <div class="particle-desc">Particle berputar cepat mengelilingi player. Efek yang lebih intens dari Orbit — memberi kesan energi tinggi saat berdiri atau bergerak.</div>
-          <div class="particle-price">Rp 75.000</div><div class="buy-tag">Beli →</div>
-        </div>
-      </a>
-      <a class="buyable" href="https://wa.me/6281270551570?text=Halo%2Badmin%2C%2Bsaya%2Bmau%2Bbeli%2BPartikel%2BSpiral%2BRp%2B80.000%0AGamertag%3A%20%0ATipe%20Minecraft%20%28Java/Bedrock%29%3A%20%0A%0AQRIS%3A%20https%3A//www.image2url.com/r2/default/images/1782458859060-3c93a54a-a932-4b97-861e-25e7d62e0a08.jpg" target="_blank">
-        <div class="particle-card buyable-card"><span class="label-badge label-permanent">PERMANENT</span>
-          <span class="particle-icon">🌀</span><div class="particle-name">Spiral</div>
-          <div class="particle-desc">Particle berputar spiral ke atas dan ke bawah. Dinamis dan artistik — cocok untuk player yang suka tampilan unik dan tidak pasaran.</div>
-          <div class="particle-price">Rp 80.000</div><div class="buy-tag">Beli →</div>
-        </div>
-      </a>
-      <a class="buyable" href="https://wa.me/6281270551570?text=Halo%2Badmin%2C%2Bsaya%2Bmau%2Bbeli%2BPartikel%2BRings%2BRp%2B90.000%0AGamertag%3A%20%0ATipe%20Minecraft%20%28Java/Bedrock%29%3A%20%0A%0AQRIS%3A%20https%3A//www.image2url.com/r2/default/images/1782458859060-3c93a54a-a932-4b97-861e-25e7d62e0a08.jpg" target="_blank">
-        <div class="particle-card buyable-card"><span class="label-badge label-permanent">PERMANENT</span>
-          <span class="particle-icon">⭕</span><div class="particle-name">Rings</div>
-          <div class="particle-desc">Cincin particle horizontal berputar mengelilingi player. Efek premium yang terlihat seperti shield energi atau portal kecil di sekitar tubuh.</div>
-          <div class="particle-price">Rp 90.000</div><div class="buy-tag">Beli →</div>
-        </div>
-      </a>
-    </div>
-
-    <span class="sub-label">— Sultan (100k)</span>
-    <div class="particle-grid">
-      <a class="buyable" href="https://wa.me/6281270551570?text=Halo%2Badmin%2C%2Bsaya%2Bmau%2Bbeli%2BPartikel%2BBeam%2BRp%2B100.000%0AGamertag%3A%20%0ATipe%20Minecraft%20%28Java/Bedrock%29%3A%20%0A%0AQRIS%3A%20https%3A//www.image2url.com/r2/default/images/1782458859060-3c93a54a-a932-4b97-861e-25e7d62e0a08.jpg" target="_blank">
-        <div class="particle-card buyable-card"><span class="label-badge label-permanent">PERMANENT</span>
-          <span class="particle-icon">🔦</span><div class="particle-name">Beam</div>
-          <div class="particle-desc">Sinar lurus ke atas dari tubuh player seperti tiang cahaya. Terlihat sangat jelas dari jarak jauh — cocok untuk mark presence di spawn atau event.</div>
-          <div class="particle-price">Rp 100.000</div><div class="buy-tag">Beli →</div>
-        </div>
-      </a>
-      <a class="buyable" href="https://wa.me/6281270551570?text=Halo%2Badmin%2C%2Bsaya%2Bmau%2Bbeli%2BPartikel%2BSphere%2BRp%2B100.000%0AGamertag%3A%20%0ATipe%20Minecraft%20%28Java/Bedrock%29%3A%20%0A%0AQRIS%3A%20https%3A//www.image2url.com/r2/default/images/1782458859060-3c93a54a-a932-4b97-861e-25e7d62e0a08.jpg" target="_blank">
-        <div class="particle-card buyable-card"><span class="label-badge label-permanent">PERMANENT</span>
-          <span class="particle-icon">🔮</span><div class="particle-name">Sphere</div>
-          <div class="particle-desc">Bola particle menyelimuti seluruh tubuh. Terlihat seperti player berada di dalam shield atau bubble energi — sangat mencolok dan berkelas.</div>
-          <div class="particle-price">Rp 100.000</div><div class="buy-tag">Beli →</div>
-        </div>
-      </a>
-      <a class="buyable" href="https://wa.me/6281270551570?text=Halo%2Badmin%2C%2Bsaya%2Bmau%2Bbeli%2BPartikel%2BCompanion%2BRp%2B100.000%0AGamertag%3A%20%0ATipe%20Minecraft%20%28Java/Bedrock%29%3A%20%0A%0AQRIS%3A%20https%3A//www.image2url.com/r2/default/images/1782458859060-3c93a54a-a932-4b97-861e-25e7d62e0a08.jpg" target="_blank">
-        <div class="particle-card buyable-card"><span class="label-badge label-permanent">PERMANENT</span>
-          <span class="particle-icon">🐾</span><div class="particle-name">Companion</div>
-          <div class="particle-desc">Particle mengikuti seperti hewan peliharaan kecil. Lucu, unik, dan menggemaskan — teman setia yang menemani setiap langkahmu di server.</div>
-          <div class="particle-price">Rp 100.000</div><div class="buy-tag">Beli →</div>
-        </div>
-      </a>
-      <a class="buyable" href="https://wa.me/6281270551570?text=Halo%2Badmin%2C%2Bsaya%2Bmau%2Bbeli%2BPartikel%2BWhirlwind%2BRp%2B100.000%0AGamertag%3A%20%0ATipe%20Minecraft%20%28Java/Bedrock%29%3A%20%0A%0AQRIS%3A%20https%3A//www.image2url.com/r2/default/images/1782458859060-3c93a54a-a932-4b97-861e-25e7d62e0a08.jpg" target="_blank">
-        <div class="particle-card buyable-card"><span class="label-badge label-permanent">PERMANENT</span>
-          <span class="particle-icon">🌪️</span><div class="particle-name">Whirlwind</div>
-          <div class="particle-desc">Angin puyuh particle berputar kencang di sekitar player. Efek paling ramai dan dramatis — semua mata akan tertuju padamu saat lewat.</div>
-          <div class="particle-price">Rp 100.000</div><div class="buy-tag">Beli →</div>
-        </div>
-      </a>
-      <a class="buyable" href="https://wa.me/6281270551570?text=Halo%2Badmin%2C%2Bsaya%2Bmau%2Bbeli%2BPartikel%2BVortex%2BRp%2B100.000%0AGamertag%3A%20%0ATipe%20Minecraft%20%28Java/Bedrock%29%3A%20%0A%0AQRIS%3A%20https%3A//www.image2url.com/r2/default/images/1782458859060-3c93a54a-a932-4b97-861e-25e7d62e0a08.jpg" target="_blank">
-        <div class="particle-card buyable-card"><span class="label-badge label-permanent">PERMANENT</span>
-          <span class="particle-icon">🌌</span><div class="particle-name">Vortex</div>
-          <div class="particle-desc">Pusaran tornado besar di sekitar player. Lebih luas dan megah dari Whirlwind — memberi kesan seperti penguasa elemental yang baru saja turun ke dunia.</div>
-          <div class="particle-price">Rp 100.000</div><div class="buy-tag">Beli →</div>
-        </div>
-      </a>
-      <a class="buyable" href="https://wa.me/6281270551570?text=Halo%2Badmin%2C%2Bsaya%2Bmau%2Bbeli%2BPartikel%2BWings%2BRp%2B100.000%0AGamertag%3A%20%0ATipe%20Minecraft%20%28Java/Bedrock%29%3A%20%0A%0AQRIS%3A%20https%3A//www.image2url.com/r2/default/images/1782458859060-3c93a54a-a932-4b97-861e-25e7d62e0a08.jpg" target="_blank">
-        <div class="particle-card buyable-card"><span class="label-badge label-permanent">PERMANENT</span>
-          <span class="particle-icon">🪽</span><div class="particle-name">Wings</div>
-          <div class="particle-desc">Sayap partikel menjulang anggun di punggungmu. Efek visual yang mencolok dan elegan, cocok untuk tampil beda saat berjalan atau terbang di server.</div>
-          <div class="particle-price">Rp 100.000</div><div class="buy-tag">Beli →</div>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <!-- AKSESORIS -->
-  <section id="aksesoris">
-    <div class="section-header">
-      <span class="section-label">✦ Exclusive</span>
-      <div class="section-title">Aksesoris</div>
-      <div class="section-desc">Item kosmetik eksklusif yang akan segera hadir untuk melengkapi penampilanmu di server.</div>
-    </div>
-    <div class="aksesori-grid">
-      <div class="aksesori-card">
-        <span class="aksesori-icon">🎩</span>
-        <div class="aksesori-name">Custom Hat</div>
-        <div class="aksesori-desc">Topi unik yang bisa di-request sesuai keinginanmu sendiri. Terlihat oleh semua player yang ada di sekitarmu di server.</div>
-        <div class="cs-badge">🔒 Coming Soon</div>
+        <h3 class="group-head">Rank puncak <span>Cosmic sampai Emphyrean</span></h3>
+        <div id="rpg-rank-peak"></div>
       </div>
-      <div class="aksesori-card">
-        <span class="aksesori-icon">🪽</span>
-        <div class="aksesori-name">Wing</div>
-        <div class="aksesori-desc">Sayap eksklusif dengan desain kustom pilihanmu sendiri. Tampil megah dan memukau di hadapan seluruh player server.</div>
-        <div class="cs-badge">🔒 Coming Soon</div>
+    </section>
+
+    <section class="section" id="banding-rpg">
+      <div class="shell">
+        <div class="sec-head">
+          <span class="sec-index">02</span>
+          <div>
+            <h2>Perbandingan benefit</h2>
+            <p class="sec-note">Angka di tabel sama dengan isi tiap rank di atas. Geser ke samping untuk melihat semua rank.</p>
+          </div>
+        </div>
+        <div class="table-scroll">
+          <table class="cmp">
+            <caption>Benefit rank RPG per rank</caption>
+            <thead>
+              <tr>
+                <th scope="col">Benefit</th>
+                <th scope="col">Nova</th>
+                <th scope="col">Lunar</th>
+                <th scope="col">Astra</th>
+                <th scope="col">Solar</th>
+                <th scope="col">Athena</th>
+                <th scope="col">Stellar</th>
+                <th scope="col">Nexus</th>
+                <th scope="col">Nebula</th>
+                <th scope="col">Gargantua</th>
+                <th scope="col">Cosmic</th>
+                <th scope="col">Celestial</th>
+                <th scope="col">Quasar</th>
+                <th scope="col">Emphyrean</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">🏠 Max Sethome</th><td>5</td><td>8</td><td>10</td><td>15</td><td>18</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>50</td><td>80</td><td>100</td></tr>
+              <tr><th scope="row">🏪 Auction House Slots</th><td>5</td><td>8</td><td>10</td><td>15</td><td>18</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>50</td><td>50</td><td>100</td></tr>
+              <tr><th scope="row">📈 Skill Multiplier</th><td class="dash">·</td><td>+20%</td><td>+30%</td><td>+40%</td><td>+40%</td><td>+50%</td><td>+50%</td><td>+60%</td><td>+65%</td><td>+70%</td><td>+80%</td><td>+90%</td><td>+120%</td></tr>
+              <tr><th scope="row">💰 Sell Multiplier</th><td class="dash">·</td><td>+20%</td><td>+30%</td><td>+40%</td><td>+40%</td><td>+50%</td><td>+50%</td><td>+60%</td><td>+65%</td><td>+70%</td><td>+80%</td><td>+90%</td><td>+120%</td></tr>
+              <tr><th scope="row">🎁 Rank Kit</th><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
+              <tr><th scope="row">✨ Special Skill</th><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td>❄️ Freeze</td><td>❄️ 🔥 ⚡</td></tr>
+              <tr><th scope="row">⚡ Special Command</th><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td>1</td><td>1</td><td>1</td><td>3</td><td>5</td><td>5</td><td>6</td></tr>
+              <tr><th scope="row">📱 Portable Commands</th><td class="dash">·</td><td class="dash">·</td><td>1</td><td>3</td><td>4</td><td>5</td><td>5</td><td>5</td><td>5</td><td>5</td><td>5</td><td>5</td><td>5</td></tr>
+              <tr><th scope="row">📢 Broadcast</th><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="dash">·</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
+              <tr><th scope="row">🎁 Daily Reward Tier</th><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>3</td><td>3</td><td>3</td><td>4</td><td>4</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="currency-rpg">
+      <div class="shell">
+        <div class="sec-head">
+          <span class="sec-index">03</span>
+          <div>
+            <h2>Currency RPG</h2>
+            <p class="sec-note">Mata uang premium untuk server RPG.</p>
+          </div>
+        </div>
+        <div class="entry-list" id="rpg-currency-list"></div>
+      </div>
+    </section>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="shell">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-brand">Kita Network</p>
+        <p class="footer-copy">Toko VIP untuk server Economy dan RPG. Pertanyaan di luar pembelian bisa langsung lewat WhatsApp.</p>
+      </div>
+      <div class="footer-links">
+        <a class="ghost" href="https://wa.me/6281270551570" target="_blank" rel="noopener">Chat admin</a>
+        <a class="ghost" href="#konten">Kembali ke atas</a>
       </div>
     </div>
-  </section>
-
-  <!-- MISC -->
-  <section id="misc">
-    <div class="section-header">
-      <span class="section-label">✦ Premium Currency</span>
-      <div class="section-title">MISC</div>
-      <div class="section-desc">Item dan layanan eksklusif untuk melengkapi pengalaman VIP-mu di Kita Network Economy.</div>
-    </div>
-    <div class="misc-grid">
-      <a class="buyable" href="https://wa.me/6281270551570?text=Halo%2Badmin%2C%2Bsaya%2Bmau%2Bbeli%2BVIP%2BCoin%0AGamertag%3A%20%0ATipe%20Minecraft%20%28Java/Bedrock%29%3A%20%0A%0AQRIS%3A%20https%3A//www.image2url.com/r2/default/images/1782458859060-3c93a54a-a932-4b97-861e-25e7d62e0a08.jpg" target="_blank">
-        <div class="misc-card buyable-card"><span class="label-badge label-onetime">ONE TIME CLAIM</span>
-          <span class="misc-icon">💰</span><div class="misc-title">VIP Coin</div>
-          <div class="misc-desc">Coin in-game untuk digunakan di berbagai fitur server Kita Network. Langsung masuk ke akunmu, tidak ada masa kadaluarsa.</div>
-          <div class="misc-price">Rp 5.000 = 30.000 Coin</div><div class="buy-tag">Beli →</div>
-        </div>
-      </a>
-      <a class="buyable" href="https://wa.me/6281270551570?text=Halo%2Badmin%2C%2Bsaya%2Bmau%2Bbeli%2BShard%0AGamertag%3A%20%0ATipe%20Minecraft%20%28Java/Bedrock%29%3A%20%0A%0AQRIS%3A%20https%3A//www.image2url.com/r2/default/images/1782458859060-3c93a54a-a932-4b97-861e-25e7d62e0a08.jpg" target="_blank">
-        <div class="misc-card buyable-card"><span class="label-badge label-onetime">ONE TIME CLAIM</span>
-          <span class="misc-icon">💎</span><div class="misc-title">Shard</div>
-          <div class="misc-desc">Mata uang premium langka untuk item eksklusif dan fitur spesial. Nilai tinggi dan sangat dicari di server.</div>
-          <div class="misc-price">Rp 1.000 / Shard</div><div class="buy-tag">Beli →</div>
-        </div>
-      </a>
-      <a class="buyable" href="https://wa.me/6281270551570?text=Halo%2Badmin%2C%2Bsaya%2Bmau%2Bbeli%2BTambah%2BSethome%0AGamertag%3A%20%0ATipe%20Minecraft%20%28Java/Bedrock%29%3A%20%0A%0AQRIS%3A%20https%3A//www.image2url.com/r2/default/images/1782458859060-3c93a54a-a932-4b97-861e-25e7d62e0a08.jpg" target="_blank">
-        <div class="misc-card buyable-card"><span class="label-badge label-permanent">PERMANENT</span>
-          <span class="misc-icon">🏠</span><div class="misc-title">Tambah /sethome</div>
-          <div class="misc-desc">Tambah 1 slot /sethome permanen di luar batas bawaan rankmu. Bisa dibeli berkali-kali untuk memiliki lebih banyak titik teleport favorit.</div>
-          <div class="misc-price">Rp 3.000 / slot</div><div class="buy-tag">Beli →</div>
-        </div>
-      </a>
-      <a class="buyable" href="https://wa.me/6281270551570?text=Halo%2Badmin%2C%2Bsaya%2Bmau%2Bbeli%2BCustom%2BRole%2BRp%2B10.000%0AGamertag%3A%20%0ATipe%20Minecraft%20%28Java/Bedrock%29%3A%20%0A%0AQRIS%3A%20https%3A//www.image2url.com/r2/default/images/1782458859060-3c93a54a-a932-4b97-861e-25e7d62e0a08.jpg" target="_blank">
-        <div class="misc-card buyable-card"><span class="label-badge label-permanent">PERMANENT</span>
-          <span class="misc-icon">👑</span><div class="misc-title">Custom Role</div>
-          <div class="misc-desc">Buat role eksklusif permanen dengan nama impianmu sendiri — bebas apapun namanya! Tampil beda dari player lain dengan title yang benar-benar unik milikmu.</div>
-          <div class="misc-price">Rp 10.000 / role</div><div class="buy-tag">Beli →</div>
-        </div>
-      </a>
-    </div>
-  </section>
-
-</div><!-- /pane-economy -->
-
-<!-- ============ RPG SERVER ============ -->
-<div class="server-pane" id="pane-rpg">
-
-  <section id="rank-rpg">
-    <div class="section-header">
-      <span class="section-label">✦ Prestige</span>
-      <div class="section-title">Sistem Rank — RPG</div>
-      <div class="section-desc">Rank eksklusif untuk petualanganmu di Kita Network RPG.</div>
-    </div>
-    <div class="rank-grid" id="rpg-rank-grid"></div>
-    <div class="rank-cumulative-note">
-      💡 <strong>Info:</strong> Semua rank RPG bersifat <strong>permanen</strong> dan tetap ada di <strong>season selanjutnya</strong>.
-    </div>
-  </section>
-
-  <section>
-    <div class="section-header">
-      <span class="section-label">✦ Overview</span>
-      <div class="section-title">Perbandingan Benefit Rank RPG</div>
-    </div>
-    <div class="benefit-table-wrap">
-      <table class="bt">
-        <thead><tr><th>Benefit</th><th>Nova</th><th>Lunar</th><th>Astra</th><th>Solar</th><th>Athena</th><th>Stellar</th><th>Nexus</th><th>Nebula</th><th>Gargantua</th><th>Cosmic</th><th>Celestial</th><th>Quasar</th><th>Emphyrean</th></tr></thead>
-        <tbody>
-          <tr><td>🏠 Max Sethome</td><td>5</td><td>8</td><td>10</td><td>15</td><td>18</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>50</td><td>80</td><td>100</td></tr>
-          <tr><td>🏪 Auction House Slots</td><td>5</td><td>8</td><td>10</td><td>15</td><td>18</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>50</td><td>50</td><td>100</td></tr>
-          <tr><td>📈 Skill Multiplier</td><td class="dash">—</td><td>+20%</td><td>+30%</td><td>+40%</td><td>+40%</td><td>+50%</td><td>+50%</td><td>+60%</td><td>+65%</td><td>+70%</td><td>+80%</td><td>+90%</td><td>+120%</td></tr>
-          <tr><td>💰 Sell Multiplier</td><td class="dash">—</td><td>+20%</td><td>+30%</td><td>+40%</td><td>+40%</td><td>+50%</td><td>+50%</td><td>+60%</td><td>+65%</td><td>+70%</td><td>+80%</td><td>+90%</td><td>+120%</td></tr>
-          <tr><td>🎁 Rank Kit</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-          <tr><td>✨ Special Skill</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td>❄️ Freeze</td><td>❄️ 🔥 ⚡</td></tr>
-          <tr><td>⚡ Special Command</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td>1</td><td>1</td><td>1</td><td>3</td><td>5</td><td>5</td><td>6</td></tr>
-          <tr><td>📱 Portable Commands</td><td class="dash">—</td><td class="dash">—</td><td>1</td><td>3</td><td>4</td><td>5</td><td>5</td><td>5</td><td>5</td><td>5</td><td>5</td><td>5</td><td>5</td></tr>
-          <tr><td>📢 Broadcast</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-          <tr><td>🎁 Daily Reward Tier</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>3</td><td>3</td><td>3</td><td>4</td><td>4</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section id="currency-rpg">
-    <div class="section-header">
-      <span class="section-label">✦ Premium Currency</span>
-      <div class="section-title">Coin & Shard — RPG</div>
-      <div class="section-desc">Mata uang premium untuk server RPG Kita Network.</div>
-    </div>
-    <div class="misc-grid">
-      <a class="buyable" href="https://wa.me/6281270551570?text=Halo%20admin%2C%20saya%20mau%20beli%20Coin%20RPG%20Rp%205.000%0AGamertag%3A%20%0ATipe%20Minecraft%20%28Java/Bedrock%29%3A%20%0A%0AQRIS%3A%20https%3A//www.image2url.com/r2/default/images/1782458859060-3c93a54a-a932-4b97-861e-25e7d62e0a08.jpg" target="_blank">
-        <div class="misc-card buyable-card"><span class="label-badge label-onetime">ONE TIME CLAIM</span>
-          <span class="misc-icon">💰</span><div class="misc-title">Coin RPG</div>
-          <div class="misc-desc">Coin in-game server RPG untuk berbagai fitur dan pembelian. Langsung masuk ke akunmu, tidak ada masa kadaluarsa.</div>
-          <div class="misc-price">Rp 5.000 = 30.000 Coin</div><div class="buy-tag">Beli →</div>
-        </div>
-      </a>
-      <a class="buyable" href="https://wa.me/6281270551570?text=Halo%20admin%2C%20saya%20mau%20beli%20Shard%20RPG%20Rp%205.000%0AGamertag%3A%20%0ATipe%20Minecraft%20%28Java/Bedrock%29%3A%20%0A%0AQRIS%3A%20https%3A//www.image2url.com/r2/default/images/1782458859060-3c93a54a-a932-4b97-861e-25e7d62e0a08.jpg" target="_blank">
-        <div class="misc-card buyable-card"><span class="label-badge label-onetime">ONE TIME CLAIM</span>
-          <span class="misc-icon">💎</span><div class="misc-title">Shard RPG</div>
-          <div class="misc-desc">Mata uang premium langka server RPG untuk item eksklusif dan fitur spesial. Nilai tinggi dan sangat dicari.</div>
-          <div class="misc-price">Rp 5.000 = 10 Shard</div><div class="buy-tag">Beli →</div>
-        </div>
-      </a>
-    </div>
-  </section>
-
-</div><!-- /pane-rpg -->
-
-</div><!-- /wrap -->
-
-<footer>
-  <div class="wrap">
-    <p>🙏 Terima kasih luar biasa kepada seluruh VIP <strong>Kita Network</strong>!</p>
-    <p>Berkat kalian, server Kita Network tetap bertahan dan semakin berkembang.</p>
-    <p style="margin-top:20px;">
-      <a class="wa-btn" href="https://wa.me/6281270551570" target="_blank" style="margin:0 auto;display:inline-flex;">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a9.99 9.99 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.135.561 4.14 1.543 5.874L.057 23.272a.75.75 0 00.913.914l5.488-1.485A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.92 0-3.72-.504-5.27-1.385l-.374-.215-3.887 1.052 1.053-3.795-.232-.385A9.955 9.955 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-        Hubungi Admin
-      </a>
-    </p>
-    <p style="margin-top:20px;font-size:12px;color:rgba(154,143,116,.5);">VIP bukan cuma status — ini adalah <strong>LEGENDA</strong> yang kamu ciptakan sendiri. ✨</p>
+    <p class="fine">Harga dalam Rupiah. Pembayaran lewat QRIS. Data pembeli hanya dipakai untuk menyusun pesan WhatsApp dan tidak disimpan di browser.</p>
   </div>
 </footer>
 
-<script>
-const WA = 'https://wa.me/6281270551570?text=';
-const QMSG = '\nGamertag: \nTipe Minecraft (Java/Bedrock): \n\nQRIS: https://www.image2url.com/r2/default/images/1782458859060-3c93a54a-a932-4b97-861e-25e7d62e0a08.jpg';
-
-/* ================= DATA RANK ECONOMY ================= */
-const ECO_RANKS = [
- {n:'Nova',i:'🌑',p:'Rp 10.000',cls:'',b:['Title Exclusive: <strong>🌑 Nova</strong>','/kit nova','+2 Hati','Ability: Speed I','11 /sethome','Daily Reward Tier 2']},
- {n:'Lunar',i:'🌙',p:'Rp 25.000',cls:'',b:['Title Exclusive: <strong>🌙 Lunar</strong>','/kit lunar','+5 Hati','Ability: Speed II','12 /sethome','Sell Bonus: <strong>+20%</strong>','Skill Multiplier: <strong>+20%</strong>','Player Warp ×2','Daily Reward Tier 2']},
- {n:'Astra',i:'🌠',p:'Rp 35.000',cls:'',b:['Title Exclusive: <strong>🌠 Astra</strong>','/kit astra','+7 Hati','Ability: Speed II / Jump Boost I','15 /sethome','Sell Bonus: <strong>+30%</strong>','Skill Multiplier: <strong>+30%</strong>','Fly v1 ✈️','Player Warp ×2','Daily Reward Tier 2']},
- {n:'Solar',i:'☀️',p:'Rp 50.000',cls:'',b:['Title Exclusive: <strong>☀️ Solar</strong>','/kit solar','+10 Hati','Ability: Speed II / Jump Boost II','20 /sethome','Sell Bonus: <strong>+40%</strong>','Skill Multiplier: <strong>+40%</strong>','Fly v1 ✈️','Player Warp ×5','Daily Reward Tier 2']},
- {n:'Athena',i:'🛡️',p:'Rp 75.000',cls:'',b:['Title Exclusive: <strong>🛡️ Athena</strong>','/kit athena','+15 Hati','Ability: Speed III / Jump Boost II','25 /sethome','Sell Bonus: <strong>+40%</strong>','Skill Multiplier: <strong>+40%</strong>','Fly v1 ✈️','Portable: /enderchest, /workbench','Player Warp ×5','Daily Reward Tier 2']},
- {n:'Stellar',i:'⭐',p:'Rp 100.000',cls:'',b:['Title Exclusive: <strong>⭐ Stellar</strong>','/kit stellar','+20 Hati','Ability: Speed II / Jump Boost II','30 /sethome','Sell Bonus: <strong>+50%</strong>','Skill Multiplier: <strong>+50%</strong>','Skill: 🔥 Inferno','3 Slot Backpack','Portable: /enderchest, /workbench, /anvil','Fly v2 ✈️','Player Warp ×5','Daily Reward Tier 2']},
- {n:'Nexus',i:'🔗',p:'Rp 150.000',cls:'',b:['Title Exclusive: <strong>🔗 Nexus</strong>','/kit nexus','+25 Hati','Ability: Speed III / Jump Boost II','35 /sethome','Sell Bonus: <strong>+50%</strong>','Skill Multiplier: <strong>+50%</strong>','Skill: 🔥 Inferno','5 Slot Backpack','Portable: /enderchest, /workbench, /anvil, /stonecutter','Special Command: /feed','Fly v2 ✈️','Player Warp ×5','Daily Reward Tier 2']},
- {n:'Nebula',i:'🌌',p:'Rp 200.000',cls:'',b:['Title Exclusive: <strong>🌌 Nebula</strong>','/kit nebula','+30 Hati','Ability: Speed III / Jump Boost III','40 /sethome','Sell Bonus: <strong>+60%</strong>','Skill Multiplier: <strong>+60%</strong>','Skill: 🔥 Inferno, 📏 Size Shift','8 Slot Backpack','Portable: /stonecutter, /enderchest, /anvil, /workbench, /grindstone','Special Command: /feed, /heal','Fly v2 ✈️','Player Warp ×5','Daily Reward Tier 2']},
- {n:'Gargantua',i:'🕳️',p:'Rp 250.000',cls:'',b:['Title Exclusive: <strong>🕳️ Gargantua</strong>','/kit gargantua','+35 Hati','Ability: Speed III / Jump Boost III / Night Vision','45 /sethome','Sell Bonus: <strong>+65%</strong>','Skill Multiplier: <strong>+65%</strong>','Skill: 🔥 Inferno, 📏 Size Shift','10 Slot Backpack','Portable: /stonecutter, /enderchest, /anvil, /workbench, /grindstone','Special Command: /feed, /heal','Fly v2 ✈️','Player Warp ×5','Daily Reward Tier 3']},
- {n:'Cosmic',i:'✨',p:'Rp 300.000',cls:'rank-cosmic',b:['Title Exclusive: <strong>✨ Cosmic</strong>','/kit cosmic','+40 Hati','Ability: Speed III / Jump Boost III / Night Vision / Haste I','50 /sethome','Sell Bonus: <strong>+70%</strong>','Skill Multiplier: <strong>+70%</strong>','Skill: 🔥 Inferno, 📏 Size Shift, 🩸 Lifesteal','15 Slot Backpack','Portable: /stonecutter, /enderchest, /anvil, /workbench, /grindstone','Special Command: /feed, /heal, /ptime','Fly v3 ✈️','Player Warp ×10','Daily Reward Tier 3']},
- {n:'Celestial',i:'🌟',p:'Rp 400.000',cls:'rank-celestial',b:['Title Exclusive: <strong>🌟 Celestial</strong>','/kit celestial','+50 Hati','Ability: Speed III / Jump Boost III / Haste II / Night Vision','90 /sethome','Sell Bonus: <strong>+80%</strong>','Skill Multiplier: <strong>+80%</strong>','Skill: 🔥 Inferno, 📏 Size Shift, 🩸 Lifesteal, ⚡ Lightning Punch','<strong>Bebas Pilih 1 Partikel</strong> ✨','<strong>Claim 1 Kit Bebas</strong> (one time claim)','20 Slot Backpack','Portable: /stonecutter, /enderchest, /anvil, /workbench, /grindstone','Special Command: /feed, /heal, /ptime, /pweather, /nick, /repair','Fly v3 ✈️','Player Warp ×10','Daily Reward Tier 3']},
- {n:'Quasar',i:'💫',p:'Rp 600.000',cls:'rank-quasar',b:['Title Exclusive: <strong>💫 Quasar</strong>','/kit quasar','+60 Hati','Ability: Speed III / Jump Boost III / Haste II / Strength I / Night Vision','90 /sethome','Sell Bonus: <strong>+90%</strong>','Skill Multiplier: <strong>+90%</strong>','Skill: 🔥 Inferno, 📏 Size Shift, 🩸 Lifesteal, ⚡ Lightning Punch','<strong>Bebas Pilih 2 Partikel</strong> ✨','<strong>Claim 1 Kit Bebas</strong> (one time claim)','30 Slot Backpack','Portable: /stonecutter, /enderchest, /anvil, /workbench, /grindstone','Special Command: /feed, /heal, /ptime, /pweather, /nick, /repair, /glow, /colorpicker, emojipicker','Fly v3 ✈️','Player Warp ×10','Daily Reward Tier 4']},
- {n:'Empyrean',i:'👑',p:'Rp 800.000',cls:'rank-empyrean',b:['Title Exclusive: <strong>👑 Empyrean</strong>','/kit empyrean','+70 Hati','Ability: Speed III / Jump Boost III / Haste II / Strength II / Night Vision','90 /sethome','Sell Bonus: <strong>+120%</strong>','Skill Multiplier: <strong>+120%</strong>','Skill: 🔥 Inferno, 📏 Size Shift, 🩸 Lifesteal, ⚡ Lightning Punch','<strong>Bebas Pilih 3 Partikel</strong> ✨','<strong>Claim 1 Kit Bebas</strong> (one time claim)','50 Slot Backpack','Portable: /stonecutter, /enderchest, /anvil, /workbench, /grindstone','Special Command: /feed, /heal, /ptime, /pweather, /nick, /repair, /glow, /colorpicker, emojipicker','Fly v3 ✈️','Player Warp ×10','Daily Reward Tier 4']}
-];
-
-/* ================= DATA RANK RPG ================= */
-const RPG_RANKS = [
- {n:'Nova',i:'🌑',op:'Rp 10.000',p:'Rp 8.000',cls:'',b:['Title Exclusive: <strong>🌑 Nova</strong>','/kit nova','Auction House: 5 Slots','Max Sethome: 5','Daily Reward Tier 2']},
- {n:'Lunar',i:'🌙',op:'Rp 25.000',p:'Rp 20.000',cls:'',b:['Title Exclusive: <strong>🌙 Lunar</strong>','/kit lunar','Auction House: 8 Slots','Max Sethome: 8','Skill Multiplier: <strong>+20%</strong>','Sell Multiplier: <strong>+20%</strong>','Daily Reward Tier 2']},
- {n:'Astra',i:'🌠',op:'Rp 35.000',p:'Rp 28.000',cls:'',b:['Title Exclusive: <strong>🌠 Astra</strong>','/kit astra','Auction House: 10 Slots','Max Sethome: 10','Skill Multiplier: <strong>+30%</strong>','Sell Multiplier: <strong>+30%</strong>','Portable: /stonecutter','Daily Reward Tier 2']},
- {n:'Solar',i:'☀️',op:'Rp 50.000',p:'Rp 40.000',cls:'',b:['Title Exclusive: <strong>☀️ Solar</strong>','/kit solar','Auction House: 15 Slots','Max Sethome: 15','Skill Multiplier: <strong>+40%</strong>','Sell Multiplier: <strong>+40%</strong>','Portable: /stonecutter, /enderchest, /anvil','Daily Reward Tier 2']},
- {n:'Athena',i:'🛡️',op:'Rp 75.000',p:'Rp 60.000',cls:'',b:['Title Exclusive: <strong>🛡️ Athena</strong>','/kit athena','Auction House: 18 Slots','Max Sethome: 18','Skill Multiplier: <strong>+40%</strong>','Sell Multiplier: <strong>+40%</strong>','Portable: /stonecutter, /enderchest, /anvil, /workbench','Daily Reward Tier 2']},
- {n:'Stellar',i:'⭐',op:'Rp 100.000',p:'Rp 80.000',cls:'',b:['Title Exclusive: <strong>⭐ Stellar</strong>','/kit stellar','Auction House: 20 Slots','Max Sethome: 20','Skill Multiplier: <strong>+50%</strong>','Sell Multiplier: <strong>+50%</strong>','Portable: /stonecutter, /enderchest, /anvil, /workbench, /grindstone','Daily Reward Tier 2']},
- {n:'Nexus',i:'🔗',op:'Rp 150.000',p:'Rp 120.000',cls:'',b:['Title Exclusive: <strong>🔗 Nexus</strong>','/kit nexus','Auction House: 25 Slots','Max Sethome: 25','Skill Multiplier: <strong>+50%</strong>','Sell Multiplier: <strong>+50%</strong>','Portable: /stonecutter, /enderchest, /anvil, /workbench, /grindstone','Special Command: /feed','Daily Reward Tier 2']},
- {n:'Nebula',i:'🌌',op:'Rp 200.000',p:'Rp 160.000',cls:'',b:['Title Exclusive: <strong>🌌 Nebula</strong>','/kit nebula','Auction House: 30 Slots','Max Sethome: 30','Skill Multiplier: <strong>+60%</strong>','Sell Multiplier: <strong>+60%</strong>','Portable: /stonecutter, /enderchest, /anvil, /workbench, /grindstone','Special Command: /feed','Daily Reward Tier 2']},
- {n:'Gargantua',i:'🕳️',op:'Rp 250.000',p:'Rp 200.000',cls:'',b:['Title Exclusive: <strong>🕳️ Gargantua</strong>','/kit gargantua','Auction House: 35 Slots','Max Sethome: 35','Skill Multiplier: <strong>+65%</strong>','Sell Multiplier: <strong>+65%</strong>','Portable: /stonecutter, /enderchest, /anvil, /workbench, /grindstone','Special Command: /feed','Daily Reward Tier 3']},
- {n:'Cosmic',i:'✨',op:'Rp 300.000',p:'Rp 240.000',cls:'rank-cosmic',b:['Title Exclusive: <strong>✨ Cosmic</strong>','/kit cosmic','Auction House: 40 Slots','Max Sethome: 40','Skill Multiplier: <strong>+70%</strong>','Sell Multiplier: <strong>+70%</strong>','Portable: /stonecutter, /enderchest, /anvil, /workbench, /grindstone','Special Command: /feed, /heal, /ptime','Broadcast Announcement','Daily Reward Tier 3']},
- {n:'Celestial',i:'🌟',op:'Rp 400.000',p:'Rp 320.000',cls:'rank-celestial',b:['Title Exclusive: <strong>🌟 Celestial</strong>','/kit celestial','Auction House: 50 Slots','Max Sethome: 50','Skill Multiplier: <strong>+80%</strong>','Sell Multiplier: <strong>+80%</strong>','Portable: /stonecutter, /enderchest, /anvil, /workbench, /grindstone','Special Command: /feed, /heal, /ptime, /pweather, /nick','Broadcast Announcement','Daily Reward Tier 3']},
- {n:'Quasar',i:'💫',op:'Rp 600.000',p:'Rp 480.000',cls:'rank-quasar',b:['Title Exclusive: <strong>💫 Quasar</strong>','/kit quasar','Auction House: 50 Slots','Max Sethome: 80','Skill Multiplier: <strong>+90%</strong>','Sell Multiplier: <strong>+90%</strong>','Special Skill: <strong>❄️ Freeze</strong>','Portable: /stonecutter, /enderchest, /anvil, /workbench, /grindstone','Special Command: /feed, /heal, /ptime, /pweather, /nick','Broadcast Announcement','Daily Reward Tier 4']},
- {n:'Emphyrean',i:'👑',op:'Rp 800.000',p:'Rp 640.000',cls:'rank-empyrean',b:['Title Exclusive: <strong>👑 Emphyrean</strong>','/kit emphyrean','Auction House: 100 Slots','Max Sethome: 100','Skill Multiplier: <strong>+120%</strong>','Sell Multiplier: <strong>+120%</strong>','Special Skill: <strong>❄️ Freeze, 🔥 Fireball, ⚡ Thunder</strong>','Portable: /stonecutter, /enderchest, /anvil, /workbench, /grindstone','Special Command: /feed, /heal, /ptime, /pweather, /nick, /repair','Broadcast Announcement','Daily Reward Tier 4']}
-];
-
-/* ================= DATA ABILITY ================= */
-const ABILITIES = [
- {n:'⚡ Haste',d:'Kecepatan menambang meningkat signifikan. Makin tinggi level makin cepat.',p:'Rp 10.000',note:'/Level'},
- {n:'🛡️ Resistance',d:'Kurangi damage yang diterima. Cocok untuk player tank. Maks Lv 3.',p:'Rp 25.000',note:'/Level · Maks Lv 3'},
- {n:'⚔️ Strength',d:'Tambah damage serangan jarak dekat. Jadilah pembantai sejati. Maks Lv 3.',p:'Rp 20.000',note:'/Level · Maks Lv 3'},
- {n:'🏃 Speed',d:'Bergerak lebih cepat dari player lain. Berguna untuk mengejar maupun melarikan diri.',p:'Rp 5.000',note:'/Level'},
- {n:'🐇 Jump Boost',d:'Lompat lebih tinggi dari biasanya. Berguna untuk menjelajah terrain yang sulit.',p:'Rp 5.000',note:'/Level'},
- {n:'🔥 Fire Resistance',d:'Kebal terhadap api dan lava sepenuhnya. Permanen, tidak perlu potion.',p:'Rp 10.000',note:'Flat'},
- {n:'🌊 Water Breathing',d:'Bernapas tanpa batas di dalam air. Eksplorasi ocean monument tanpa khawatir.',p:'Rp 10.000',note:'Flat'},
- {n:'🌙 Night Vision',d:'Melihat sempurna di kegelapan tanpa torch. Ideal untuk eksplorasi gua.',p:'Rp 10.000',note:'Flat'},
- {n:'❤️ Tambah HP',d:'Tambah 2 HP (1 hati) permanen di luar bawaan rank. Bisa dibeli berkali-kali.',p:'Rp 2.500',note:'/2 HP'}
-];
-
-/* ================= DATA KIT ================= */
-const KITS = [
- {n:'🟢 Basic Kit',dot:'dot-basic',cls:'',priceCls:'',p:'Rp 20.000',items:['Full Enchant Vanilla Iron Tool & Armor','Full Enchant Shield','5 Golden Apple','64 Experience Bottle','64 Steak'],enc:'Full Vanilla Enchant'},
- {n:'🟡 Epic Kit',dot:'dot-epic',cls:'',priceCls:'',p:'Rp 30.000',items:['Full Enchant Vanilla Diamond Tool','Full Enchant Vanilla Iron Armor','10 Golden Apple','64 Experience Bottle','64 Steak'],enc:'Full Vanilla Enchant'},
- {n:'🟠 Legendary Kit',dot:'dot-legendary',cls:'',priceCls:'',p:'Rp 40.000',items:['Full Enchant Vanilla Diamond Tool & Armor','30 Golden Apple','64 Experience Bottle','64 Steak'],enc:'Full Vanilla Enchant'},
- {n:'🔵 Aqua Kit',dot:'dot-aqua',cls:'',priceCls:'',p:'Rp 60.000',items:['Full Enchant Vanilla Netherite Tool','Full Enchant Vanilla Diamond Armor','50 Golden Apple','64 Experience Bottle','64 Steak'],enc:'Full Vanilla Enchant'},
- {n:'🔴 Mythic Kit',dot:'dot-mythic',cls:'kit-mythic-card',priceCls:'',p:'Rp 80.000',items:['Full Enchant Vanilla Netherite Tool & Armor','128 Golden Apple','128 Experience Bottle','64 Steak'],enc:'Full Vanilla Enchant'},
- {n:'🟣 Secret Kit',dot:'dot-secret',cls:'kit-secret-card',priceCls:'',p:'Rp 100.000',items:['Custom Enchant + Full Enchant Vanilla Netherite Tool & Armor','128 Golden Apple','128 Experience Bottle','64 Steak'],enc:'+ Custom Enchant'},
- {n:'🧠 Brainrot Kit',dot:'dot-brainrot',cls:'kit-brainrot-card',priceCls:'',p:'Rp 150.000',items:['Semua isi Secret Kit','Custom Enchant + Full Enchant Bow, Elytra, Mace, Trident','128 Golden Apple','128 Experience Bottle'],enc:'+ Custom Enchant terlengkap'}
-];
-
-const PEB = ['angry_villager','ash','block_crumble','bubble_column_up','campfire_cosy_smoke','campfire_signal_smoke','cherry_leaves','composter','copper_fire_flame','crimson_spore','crit','damage_indicator','dolphin','dragon_breath','dripping_obsidian_tear','electric_spark','enchant','enchanted_hit','end_rod','entity_effect','explosion_emitter','falling_honey','falling_nectar','falling_spore_blossom','firefly','firework','fishing','glow','glow_squid_ink','gust','gust_emitter_large','gust_emitter_small','happy_villager','heart','infested','instant_effect','item_slime','item_snowball','landing_honey','landing_obsidian_tear','lava','mycelium','nautilus','note','ominous_spawning','poof','portal','raid_omen','scrape','sculk_charge','sculk_charge_pop','sculk_soul','shriek','small_gust','sneeze','snowflake','sonic_boom','soul_fire_flame','spore_blossom_air','squid_ink','sweep_attack','tinted_leaves','totem_of_undying','trial_omen','trial_spawner_detection','trial_spawner_detection_ominous','vault_connection','warped_spore','wax_off','wax_on','witch'];
-
-/* ================= RENDER ================= */
-function renderRanks(el, ranks, serverLabel){
-  el.innerHTML = ranks.map(r=>{
-    const wa = WA + encodeURIComponent(`Halo admin, saya mau beli Rank ${r.n} ${r.p}`+QMSG);
-    return `<a class="buyable" href="${wa}" target="_blank">
-      <div class="rank-card ${r.cls} buyable-card">
-        <span class="label-badge label-permanent">PERMANENT</span>
-        ${r.op?'<span class="discount-badge">-20%</span>':''}
-        <span class="rank-icon">${r.i}</span>
-        <span class="rank-title-exclusive">${r.i} ${r.n}</span>
-        <div class="rank-name">${r.n}</div>
-        <div class="rank-price-row">${r.op?`<span class="rank-price-old">${r.op}</span>`:''}<span class="rank-price">${r.p}</span></div><div class="rank-divider"></div>
-        <ul class="rank-benefits">${r.b.map(x=>`<li>${x}</li>`).join('')}</ul>
-        <div class="buy-tag">Beli →</div>
-      </div>
-    </a>`;
-  }).join('');
-}
-renderRanks(document.getElementById('eco-rank-grid'), ECO_RANKS, 'Economy');
-renderRanks(document.getElementById('rpg-rank-grid'), RPG_RANKS, 'RPG');
-
-document.getElementById('eco-ability-grid').innerHTML = ABILITIES.map(a=>{
-  const wa = WA + encodeURIComponent(`Halo admin, saya mau beli Ability ${a.n.replace(/[^\w\s]/g,'').trim()}`+QMSG);
-  return `<a class="buyable" href="${wa}" target="_blank">
-    <div class="ability-card buyable-card">
-      <span class="label-badge label-permanent">PERMANENT</span>
-      <div class="ability-name">${a.n}</div>
-      <div class="ability-desc">${a.d}</div>
-      <div class="ability-price">${a.p}<span class="ability-note">${a.note}</span></div>
-      <div class="buy-tag">Beli →</div>
+<dialog id="buyer-dialog" aria-labelledby="buyer-title">
+  <form id="buyer-form" novalidate>
+    <div class="dlg-head">
+      <h2 id="buyer-title">Data pembeli</h2>
+      <button type="button" class="dlg-close" id="buyer-close" aria-label="Tutup form">
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
     </div>
-  </a>`;
-}).join('');
 
-document.getElementById('eco-kit-grid').innerHTML = KITS.map(k=>{
-  const wa = WA + encodeURIComponent(`Halo admin, saya mau beli ${k.n.replace(/[^\w\s]/g,'').trim()} ${k.p}`+QMSG);
-  return `<a class="buyable" href="${wa}" target="_blank">
-    <div class="kit-card ${k.cls} buyable-card">
-      <span class="label-badge label-onetime">ONE TIME CLAIM</span>
-      <div class="kit-tier"><div class="kit-dot ${k.dot}"></div><div class="kit-name">${k.n}</div></div>
-      <div class="kit-content">
-        <ul class="kit-item-list">${k.items.map(x=>`<li>${x}</li>`).join('')}</ul>
-        <div class="kit-enchants">${k.enc}</div>
+    <div class="dlg-body">
+      <p class="dlg-item" id="buyer-item" hidden></p>
+
+      <div class="field">
+        <label for="buyer-name">Nama / Gamertag</label>
+        <input id="buyer-name" name="name" type="text" maxlength="32" autocomplete="off" spellcheck="false" aria-describedby="name-hint">
+        <p class="hint" id="name-hint">Maksimal 32 karakter. Huruf, angka, spasi, titik, garis bawah, dan strip.</p>
       </div>
-      <div class="kit-price">${k.p}</div>
-      <div class="buy-tag">Beli →</div>
+
+      <fieldset class="field">
+        <legend>Tipe Minecraft</legend>
+        <div class="segmented">
+          <label class="seg"><input type="radio" name="type" value="Java"><span>Java</span></label>
+          <label class="seg"><input type="radio" name="type" value="Bedrock"><span>Bedrock</span></label>
+        </div>
+      </fieldset>
+
+      <p class="form-error" id="buyer-error" role="alert" hidden></p>
+
+      <div class="dlg-actions">
+        <button type="submit" class="btn-primary" id="buyer-submit">Lanjut ke WhatsApp</button>
+        <a class="dlg-qris" href="https://www.image2url.com/r2/default/images/1782458859060-3c93a54a-a932-4b97-861e-25e7d62e0a08.jpg" target="_blank" rel="noopener">Lihat gambar QRIS</a>
+      </div>
+
+      <p class="fine">Data ini hanya dipakai untuk menyusun pesan WhatsApp dan tidak disimpan di browser.</p>
     </div>
-  </a>`;
-}).join('');
+  </form>
+</dialog>
 
-document.getElementById('peb-grid').innerHTML = PEB.map(t=>`<span class="peb-tag">${t}</span>`).join('');
-
-/* ================= SERVER SWITCH ================= */
-function setServer(s){
-  document.getElementById('pane-economy').classList.toggle('active', s==='economy');
-  document.getElementById('pane-rpg').classList.toggle('active', s==='rpg');
-  document.getElementById('btn-economy').classList.toggle('active', s==='economy');
-  document.getElementById('btn-rpg').classList.toggle('active', s==='rpg');
-  document.querySelectorAll('#nav-links a').forEach(a=>{
-    const f=a.dataset.server;
-    a.style.display = (f==='both'||f===s)?'':'none';
-  });
-}
-function goTo(id){
-  let el=document.getElementById(id)||document.getElementById(id+'-rpg');
-  if(!el) return;
-  if(el.offsetParent===null){
-    const inRpg=!!el.closest('#pane-rpg');
-    setServer(inRpg?'rpg':'economy');
-    setTimeout(()=>el.scrollIntoView({behavior:'smooth'}),80);
-    return;
-  }
-  el.scrollIntoView({behavior:'smooth'});
-}
-const hs=location.hash.replace('#','');
-setServer(hs==='rpg'?'rpg':'economy');
-</script>
-
+<script src="script.js" defer></script>
 </body>
 </html>
